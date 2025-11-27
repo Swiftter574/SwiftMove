@@ -296,30 +296,22 @@
     transition: all 0.25s ease;
   }
 
-  details[open] {
-    border-color: #4F46E5; /* brand-600 */
-    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
-  }
-
+  /* No open/close animation or border change since it's always open */
   summary {
-    cursor: pointer;
+    cursor: default;
     font-weight: 700;
     font-size: 16px;
     list-style: none;
+    margin-bottom: 8px;
+  }
+
+  /* Remove the + icon */
+  summary::after {
+    display: none;
   }
 
   summary::-webkit-details-marker {
     display: none;
-  }
-
-  summary::after {
-    content: "+";
-    float: right;
-    transition: transform 0.25s ease;
-  }
-
-  details[open] summary::after {
-    transform: rotate(45deg);
   }
 </style>
 
@@ -337,17 +329,17 @@
         <p>Yes — we arrive with the tools required for your booked service. If special parts or materials are needed, we’ll coordinate that before the job.</p>
       </details>
 
-      <details>
+      <details open>
         <summary>Which areas do you serve?</summary>
         <p>Monterey County, Santa Cruz County, and nearby communities. Contact us to confirm service for your address.</p>
       </details>
 
-      <details>
+      <details open>
         <summary>How do quotes and pricing work?</summary>
         <p>We provide upfront estimates based on the scope you share. For larger or variable jobs, we can do on-site quotes.</p>
       </details>
 
-      <details>
+      <details open>
         <summary>Are you available on weekends?</summary>
         <p>Yes — we offer flexible scheduling, including evenings and weekends.</p>
       </details>
