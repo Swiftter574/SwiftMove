@@ -285,33 +285,76 @@
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section id="faq">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="section-title">FAQs</h2>
-        <p class="kicker">Quick answers to common questions.</p>
-      </div>
-      <div class="grid cols-2">
-        <details open>
-          <summary>Do you provide tools and materials?</summary>
-          <p>Yes — we arrive with the tools required for your booked service. If special parts or materials are needed, we’ll coordinate that before the job.</p>
-        </details>
-        <details>
-          <summary>Which areas do you serve?</summary>
-          <p>Monterey County, Santa Cruz County, and nearby communities. Contact us to confirm service for your address.</p>
-        </details>
-        <details>
-          <summary>How do quotes and pricing work?</summary>
-          <p>We provide upfront estimates based on the scope you share. For larger or variable jobs, we can do on-site quotes.</p>
-        </details>
-        <details>
-          <summary>Are you available on weekends?</summary>
-          <p>Yes — we offer flexible scheduling, including evenings and weekends.</p>
-        </details>
-      </div>
+ <!-- FAQ Styles -->
+<style>
+  /* FAQ */
+  details {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 14px 16px;
+    transition: all 0.25s ease;
+  }
+
+  details[open] {
+    border-color: #4F46E5; /* brand-600 */
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+  }
+
+  summary {
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 16px;
+    list-style: none;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary::after {
+    content: "+";
+    float: right;
+    transition: transform 0.25s ease;
+  }
+
+  details[open] summary::after {
+    transform: rotate(45deg);
+  }
+</style>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="section-title">FAQs</h2>
+      <p class="kicker">Quick answers to common questions.</p>
     </div>
-  </section>
+    <div class="grid cols-2">
+      
+      <details open>
+        <summary>Do you provide tools and materials?</summary>
+        <p>Yes — we arrive with the tools required for your booked service. If special parts or materials are needed, we’ll coordinate that before the job.</p>
+      </details>
+
+      <details>
+        <summary>Which areas do you serve?</summary>
+        <p>Monterey County, Santa Cruz County, and nearby communities. Contact us to confirm service for your address.</p>
+      </details>
+
+      <details>
+        <summary>How do quotes and pricing work?</summary>
+        <p>We provide upfront estimates based on the scope you share. For larger or variable jobs, we can do on-site quotes.</p>
+      </details>
+
+      <details>
+        <summary>Are you available on weekends?</summary>
+        <p>Yes — we offer flexible scheduling, including evenings and weekends.</p>
+      </details>
+
+    </div>
+  </div>
+</section>
 
   <!-- Contact -->
   <section id="contact">
