@@ -1,519 +1,222 @@
+<!-- ===================================== -->
+<!-- SwiftMove Multi-Page Website (Full) -->
+<!-- Deep Blue + Gold | Futuristic Style -->
+<!-- ===================================== -->
+
+<!-- ================= Home Page ================= -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SwiftMove — Fast, Reliable Home Services in Monterey & Santa Cruz</title>
-  <meta name="description" content="SwiftMove provides appliance installation, furniture assembly, handyman work, and pressure washing. Veteran-owned. Serving Monterey County, Santa Cruz County, and nearby areas." />
-  <meta property="og:title" content="SwiftMove — Fast, Reliable Home Services" />
-  <meta property="og:description" content="Appliance installation, furniture assembly, handyman, and pressure washing. Locally owned & veteran operated." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://Swiftter574.github.io/Swiftmove-Site/" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1581578025234-95d9c9d3c3ed?q=80&w=1200&auto=format&fit=crop" />
-
-  <nav style="position:sticky; top:0; background:white; padding:10px; box-shadow:0 2px 4px rgba(0,0,0,0.1);">
-  <a href="#top">Home</a> |
-  <a href="#services">Services</a> |
-  <a href="#reviews">Reviews</a> |
-  <a href="#booking">Book</a>
-  </nav> 
-  
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --brand: #0ea5e9;         /* sky-500 */
-      --brand-600: #0284c7;     /* sky-600 */
-      --ink: #0f172a;           /* slate-900 */
-      --muted: #475569;         /* slate-600 */
-      --bg: #f8fafc;            /* slate-50 */
-      --card: #ffffff;          /* white */
-      --ring: rgba(14, 165, 233, 0.35);
-      --success: #16a34a;
-      --warning: #f59e0b;
-      --danger: #ef4444;
-      --radius: 16px;
-      --shadow: 0 10px 25px rgba(2, 132, 199, 0.12);
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, Noto Sans, "Apple Color Emoji", "Segoe UI Emoji";
-      color: var(--ink);
-      background: var(--bg);
-      line-height: 1.6;
-    }
-    a { color: var(--brand-600); text-decoration: none; }
-    img { max-width: 100%; height: auto; border-radius: 12px; }
-    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-    /* Header */
-    header {
-      position: sticky; top: 0; z-index: 40;
-      background: rgba(255,255,255,0.75);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid #e2e8f0;
-    }
-    .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
-    .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: 0.2px; }
-    .brand .logo {
-      width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center;
-      background: linear-gradient(135deg, var(--brand), #38bdf8);
-      color: white; font-weight: 800;
-      box-shadow: var(--shadow);
-    }
-    .nav a { font-weight: 600; }
-    .nav-links { display: none; gap: 18px; }
-    .cta { display: flex; gap: 10px; align-items: center; }
-    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 16px; border-radius: 999px; border: 1px solid #e2e8f0; background: white; font-weight: 600; }
-    .btn:hover { border-color: var(--brand); }
-    .btn.primary { background: var(--brand); color: white; border-color: var(--brand); box-shadow: var(--shadow); }
-    .btn.primary:hover { background: var(--brand-600); }
-    .btn.ghost { background: transparent; }
-
-    @media (min-width: 900px) {
-      .nav-links { display: flex; }
-    }
-
-    /* Hero */
-    .hero { padding: 64px 0 28px; }
-    .hero-wrap { display: grid; gap: 28px; align-items: center; }
-    @media (min-width: 900px) { .hero-wrap { grid-template-columns: 1.1fr 0.9fr; gap: 36px; } }
-    .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; background: #e0f2fe; color: #075985; border-radius: 999px; font-weight: 600; font-size: 12px; }
-    h1 { font-size: clamp(28px, 4vw, 48px); line-height: 1.1; margin: 10px 0 8px; letter-spacing: -0.5px; }
-    .sub { color: var(--muted); margin-bottom: 18px; }
-    .badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
-    .badge { background: white; border: 1px solid #e2e8f0; padding: 6px 10px; border-radius: 999px; font-size: 13px; }
-
-    /* Sections */
-    section { padding: 56px 0; }
-    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
-    .section-title { font-size: clamp(22px, 3vw, 32px); margin: 0; }
-    .kicker { color: var(--muted); margin: 0; }
-
-    /* Cards grid */
-    .grid { display: grid; gap: 18px; }
-    @media (min-width: 700px) { .grid.cols-2 { grid-template-columns: repeat(2, 1fr);} }
-    @media (min-width: 960px) { .grid.cols-3 { grid-template-columns: repeat(3, 1fr);} }
-    @media (min-width: 1100px) { .grid.cols-4 { grid-template-columns: repeat(4, 1fr);} }
-
-    .card { background: var(--card); border: 1px solid #e2e8f0; border-radius: var(--radius); padding: 18px; box-shadow: 0 2px 10px rgba(0,0,0,0.03); }
-    .card h3 { margin: 8px 0 6px; }
-    .card p { color: var(--muted); margin: 0; }
-    .icon { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: #e0f2fe; color: #075985; font-weight: 800; }
-
-    .list { padding-left: 18px; color: var(--muted); }
-
-    /* Reviews */
-    .review { background: white; border: 1px solid #e2e8f0; border-radius: var(--radius); padding: 18px; }
-    .stars { color: #fbbf24; font-size: 16px; letter-spacing: 1px; }
-    .reviewer { font-weight: 700; margin-top: 10px; }
-    .carousel { display: grid; grid-auto-flow: column; grid-auto-columns: 88%; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; }
-    .carousel > * { scroll-snap-align: start; }
-    @media (min-width: 900px){ .carousel { grid-auto-columns: 32%; } }
-
-    /* Gallery */
-    .gallery { display: grid; gap: 10px; grid-template-columns: repeat(2, 1fr); }
-    @media (min-width: 900px){ .gallery { grid-template-columns: repeat(4, 1fr);} }
-
-    /* FAQ */
-    details { background: white; border: 1px solid #e2e8f0; border-radius: var(--radius); padding: 14px 16px; }
-    summary { cursor: pointer; font-weight: 700; }
-
-    /* Footer */
-    footer { background: white; border-top: 1px solid #e2e8f0; padding: 28px 0; }
-    .foot { display: grid; gap: 20px; }
-    @media (min-width: 960px){ .foot { grid-template-columns: 1.2fr 1fr 1fr; align-items: start; } }
-    .mini { font-size: 13px; color: var(--muted); }
-
-    /* Modals */
-    .modal { position: fixed; inset: 0; display: none; place-items: center; background: rgba(15,23,42,0.52); padding: 20px; }
-    .modal.open { display: grid; }
-    .modal-card { background: white; border: 1px solid #e2e8f0; border-radius: 18px; max-width: 900px; width: 100%; max-height: 85vh; overflow: auto; padding: 22px; }
-    .modal-card h2 { margin-top: 0; }
-    .modal-actions { display: flex; justify-content: end; margin-top: 14px; }
-
-    /* Utilities */
-    .mt-2{margin-top:8px}.mt-3{margin-top:12px}.mt-4{margin-top:16px}.mt-6{margin-top:24px}.mt-8{margin-top:32px}
-    .chips{display:flex;flex-wrap:wrap;gap:8px}
-    .chip{padding:6px 10px;border-radius:999px;border:1px solid #e2e8f0;background:#fff;font-size:13px}
-    .center{display:grid;place-items:center}
-    .hidden{display:none}
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SwiftMove | Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <!-- Header/Nav -->
-  <header>
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo" aria-hidden="true">EME</div>
-        <a href="#top" aria-label="SwiftMove Home">SwiftMove</a>
-      </div>
-      <nav class="nav-links" aria-label="Primary">
-        <a href="#services">Services</a>
-        <a href="#reviews">Reviews</a>
-        <a href="#gallery">Photos</a>
-        <a href="#booking">Book</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <div class="cta">
-        <a class="btn ghost" href="tel:+18317328777" aria-label="Call SwiftMove">📞 (831) 330-0027</a>
-        <a class="btn primary" href="#booking" aria-label="Book SwiftMove">Book Now</a>
-      </div>
+<body class="bg-[#001f3f] text-white">
+
+  <!-- Header -->
+  <header class="flex justify-between items-center p-6 border-b border-gold/20 bg-[#001a36]">
+    <div class="flex items-center gap-3">
+      <img src="/logo.png" alt="SwiftMove Logo" class="h-10" />
+      <span class="text-gold text-lg tracking-wide">Moving Made Easy.</span>
     </div>
+    <nav class="flex gap-6 text-gold">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
 
-<!-- Hero Section -->
-<section id="top" style="text-align:center; padding:80px 20px; background:#f4f4f4;">
-  <h1 style="font-size:3em; margin-bottom:10px;">SwiftMove — We Get It Done</h1>
-  <p style="font-size:1.2em; margin-bottom:20px;">
-    Appliance Installation, Furniture Assembly, Handyman & Pressure Washing
-  </p>
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdU_9Je91Gn2PZiMNwpkCdTuw-ClGOK0rgJOko4IQ9Fm6j69g/viewform" 
-     style="display:inline-block; padding:15px 30px; background:#007bff; color:white; text-decoration:none; border-radius:5px; font-weight:bold;">
-    Book a Service
-  </a>
-</section>
-
-<!-- Services Section -->
-<section id="services" style="padding:60px 20px; text-align:center;">
-  <h2 style="font-size:2em; margin-bottom:40px;">Our Services</h2>
-  <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px;">
-    
-    <div style="width:250px; border:1px solid #ddd; border-radius:8px; padding:20px;">
-      <img src="images/Appliance_installation.JPG" alt="my photo">
-      <h3>Appliance Installation</h3>
-      <p>Electric, Gas (Natural & Propane) — professional setup every time.</p>
+  <!-- Hero Video Slider -->
+  <section class="relative w-full h-[70vh] overflow-hidden">
+    <video src="/hero.mp4" autoplay muted loop class="w-full h-full object-cover"></video>
+    <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+      <h1 class="text-4xl md:text-6xl font-bold text-gold drop-shadow-lg">Professional, Fast, Reliable</h1>
     </div>
+  </section>
 
-    <div style="width:250px; border:1px solid #ddd; border-radius:8px; padding:20px;">
-      <img src="images/Furn_assmbly.JPG" alt="my photo">
-      <h3>Furniture Assembly</h3>
-      <p>Quick, reliable assembly for beds, desks, cabinets, and more.</p>
-    </div>
+  <!-- Services Directory -->
+  <section class="py-16 px-8 grid grid-cols-2 md:grid-cols-4 gap-10 text-center">
+    <!-- Moving -->
+    <a href="moving.html" class="group">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-24 mx-auto group-hover:scale-110 transition" fill="none" stroke="#d4af37" stroke-width="1.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3 7h11v8H3zM14 10h3l3 3v2h-6zM5 19a2 2 0 11.001-3.999A2 2 0 015 19zm10 0a2 2 0 11.001-3.999A2 2 0 0115 19z"/>
+      </svg>
+      <p class="mt-4 text-gold text-lg">Moving</p>
+    </a>
+    <!-- Pressure Washing -->
+    <a href="pressure-washing.html" class="group">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-24 mx-auto group-hover:scale-110 transition" fill="none" stroke="#d4af37" stroke-width="1.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3 12h4l3 8h2l3-14h5"/>
+      </svg>
+      <p class="mt-4 text-gold text-lg">Pressure Washing</p>
+    </a>
+    <!-- Handyman -->
+    <a href="handyman.html" class="group">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-24 mx-auto group-hover:scale-110 transition" fill="none" stroke="#d4af37" stroke-width="1.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4 3l6 1 3 3-2 2-3-3-4 12h-2zM12 12l8 8"/>
+      </svg>
+      <p class="mt-4 text-gold text-lg">Handyman</p>
+    </a>
+    <!-- Furniture Assembly -->
+    <a href="assembly.html" class="group">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-24 mx-auto group-hover:scale-110 transition" fill="none" stroke="#d4af37" stroke-width="1.5" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h11l4-2v8l-4-2H3zM18 12h3"/>
+      </svg>
+      <p class="mt-4 text-gold text-lg">Furniture Assembly</p>
+    </a>
+  </section>
 
-    <div style="width:250px; border:1px solid #ddd; border-radius:8px; padding:20px;">
-      <img src="images/handyman.WEBP" alt="my photo">
-      <h3>Handyman</h3>
-      <p>Small repairs, installations, and odd jobs done efficiently.</p>
-    </div>
-
-    <div style="width:250px; border:1px solid #ddd; border-radius:8px; padding:20px;">
-      <img src="images/pressure_washing.PNG" alt="my photo">
-      <h3>Pressure Washing</h3>
-      <p>Driveways, patios, and exteriors cleaned to perfection.</p>
-    </div>
-
+  <!-- Book Button -->
+  <div class="text-center py-10">
+    <a href="contact.html" class="px-8 py-4 bg-gold text-[#001f3f] font-bold rounded-xl shadow-xl hover:bg-yellow-400 transition">Book a Service</a>
   </div>
-</section>
-
-  <!-- Reviews -->
-  <section id="reviews">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="section-title">What Customers Say</h2>
-        <p class="kicker">Real feedback from real jobs.</p>
-      </div>
-      <div class="carousel" aria-label="Reviews carousel">
-        <article class="review">
-          <div class="stars" aria-hidden="true">★★★★★</div>
-          <p>“Super great working with this team. As a woman, I’m always hesitant to hire people I don’t know. This time was respectful, easy to communicate with, and made me feel so comfortable having them in my home. I’m already planning on hiring them again.”</p>
-          <div class="reviewer">— Michelle M.</div>
-        </article>
-        <article class="review">
-          <div class="stars" aria-hidden="true">★★★★★</div>
-          <p>“My experience was great! Very communicative and professional in front of my clients. Good quality work done. Would hire them again in a heartbeat!”</p>
-          <div class="reviewer">— Walter M.</div>
-        </article>
-        <article class="review">
-          <div class="stars" aria-hidden="true">★★★★★</div>
-          <p>“Eddie was very responsive to my request to help move some furniture. He and his partner got it done superquick. They took good care not to damage anything.”</p>
-          <div class="reviewer">— Jeska D.</div>
-        </article>
-      </div>
-      <p class="mini mt-3">Have we helped you recently? <a href="#contact">Leave a review or text us your feedback.</a></p>
-    </div>
-  </section>
-
-  <!-- Gallery -->
-  <section id="gallery">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="section-title">Recent Work</h2>
-        <p class="kicker">A few shots from jobs around the area.</p>
-      </div>
-      <div class="gallery">
-        <img src="https://images.unsplash.com/photo-1600490036275-35f7aa8c0f62?q=80&w=800&auto=format&fit=crop" alt="Assembled modern desk" loading="lazy" />
-        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=800&auto=format&fit=crop" alt="Living room after furniture assembly" loading="lazy" />
-        <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=800&auto=format&fit=crop" alt="Pressure washed patio" loading="lazy" />
-        <img src="https://images.unsplash.com/photo-1586201375761-83865001e31b?q=80&w=800&auto=format&fit=crop" alt="Appliance installation" loading="lazy" />
-      </div>
-      <p class="mini mt-3">Replace these photos with your own: upload images to your repo (e.g., <code>assets/</code>) and update the <code>src</code> s.</p>
-    </div>
-  </section>
-  
-  <!-- About -->
-  <section id="about">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="section-title">About SwiftMove</h2>
-        <p class="kicker">Proudly veteran-operated and community focused.</p>
-      </div>
-      <div class="grid cols-2">
-        <div class="card">
-          <p>SwiftMove is a locally owned, veteran-operated service company providing appliance installation, furniture assembly, handyman work, and pressure washing. We believe in clear communication, respectful service, and leaving every space better than we found it.</p>
-          <p class="mt-2">Founded by Eribey, a USMC veteran, SwiftMove brings the discipline, reliability, and work ethic you expect — with friendly, professional care.</p>
-          <div class="badges mt-3">
-            <span class="badge">Veteran Operated</span>
-            <span class="badge">Locally Owned</span>
-            <span class="badge">Upfront Pricing</span>
-          </div>
-        </div>
-        <div class="card">
-          <h3>Why choose us?</h3>
-          <ul class="list">
-            <li>Professional, on-time arrivals</li>
-            <li>Careful, clean workmanship</li>
-            <li>Easy booking and clear updates</li>
-            <li>Trusted by neighbors across King City to Redwood City</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
- <!-- FAQ Styles -->
-<style>
-  /* FAQ */
-  details {
-    background: white;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    padding: 14px 16px;
-    transition: all 0.25s ease;
-  }
-
-  /* No open/close animation or border change since it's always open */
-  summary {
-    cursor: default;
-    font-weight: 700;
-    font-size: 16px;
-    list-style: none;
-    margin-bottom: 8px;
-  }
-
-  /* Remove the + icon */
-  summary::after {
-    display: none;
-  }
-
-  summary::-webkit-details-marker {
-    display: none;
-  }
-</style>
-
-<!-- FAQ -->
-<section id="faq">
-  <div class="container">
-    <div class="section-head">
-      <h2 class="section-title">FAQs</h2>
-      <p class="kicker">Quick answers to common questions.</p>
-    </div>
-    <div class="grid cols-2">
-      
-      <details open>
-        <summary>Do you provide tools and materials?</summary>
-        <p>Yes — we arrive with the tools required for your booked service. If special parts or materials are needed, we’ll coordinate that before the job.</p>
-      </details>
-
-      <details open>
-        <summary>Which areas do you serve?</summary>
-        <p>Monterey County, Santa Cruz County, and nearby communities. Contact us to confirm service for your address.</p>
-      </details>
-
-      <details open>
-        <summary>How do quotes and pricing work?</summary>
-        <p>We provide upfront estimates based on the scope you share. For larger or variable jobs, we can do on-site quotes.</p>
-      </details>
-
-      <details open>
-        <summary>Are you available on weekends?</summary>
-        <p>Yes — we offer flexible scheduling, including evenings and weekends.</p>
-      </details>
-
-    </div>
-  </div>
-</section>
-
-  <!-- Contact -->
-  <section id="contact">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="section-title">Contact</h2>
-        <p class="kicker">We’re quick to reply.</p>
-      </div>
-      <div class="grid cols-2">
-        <div class="card">
-          <h3>Call / Text</h3>
-          <p><a class="btn" href="tel:+18313300027">📞 (831) 330-0027</a></p>
-          <h3 class="mt-4">Email</h3>
-          <p><a class="btn" href="mailto:swiftmovexeme@gmail.com">✉️ swiftmovexeme@gmail.com</a></p>
-          <h3 class="mt-4">Social</h3>
-          <p class="mini">Add your links here (Facebook, Instagram, X).</p>
-        </div>
-        <div class="card">
-          <h3>Service Area</h3>
-          <p>Based in Santa Cruz county.</p>
-          <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1zIL4BgO_I1zVINGadk7C6E9ZAVhjFlU&ehbc=2E312F&noprof=1" width="100%" height="500" style="border:0;"></iframe>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- Footer -->
-  <footer>
-    <div class="container foot">
-      <div>
-        <div class="brand">
-          <div class="logo" aria-hidden="true">SM</div>
-          <strong>SwiftMove</strong>
-        </div>
-        <p class="mini mt-2">Fast, reliable home services: appliance installation, furniture assembly, handyman work, and pressure washing.</p>
-        <div class="badges mt-3">
-          <span class="badge">Veteran Operated</span>
-          <span class="badge">Local • Friendly</span>
-        </div>
-      </div>
-      <div>
-        <h4>Quick Links</h4>
-        <p class="mini"><a href="#services">Services</a> • <a href="#reviews">Reviews</a> • <a href="#gallery">Photos</a> • <a href="#booking">Book</a></p>
-        <p class="mini"><a href="#" data-open="privacy">Privacy Policy</a> • <a href="#" data-open="terms">Terms of Service</a></p>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <p class="mini">Phone: <a href="tel:+18313300027">(831) 330-0027</a><br>Email: <a href="mailto:swiftmovexeme@gmail.com">swiftmovexeme@gmail.com</a></p>
-        <p class="mini">Mon–Sun • By appointment</p>
-      </div>
-    </div>
-  </footer>
+  <footer class="py-10 text-center text-sm text-gold/70 border-t border-gold/20">© 2025 SwiftMove. All rights reserved.</footer>
 
-  <!-- Privacy Modal -->
-  <div class="modal" id="privacy-modal" role="dialog" aria-modal="true" aria-labelledby="privacy-title">
-    <div class="modal-card">
-      <h2 id="privacy-title">Privacy Policy</h2>
-      <p><em>Last updated: <!-- Set date --> August 22, 2025</em></p>
-      <p>SwiftMove ("we," "us," or "our") operates this website to provide information about our services and accept service inquiries. We respect your privacy.</p>
-      <h3>Information We Collect</h3>
-      <ul class="list">
-        <li>Contact details you submit (name, phone, email, address).</li>
-        <li>Service details (what you need done, preferred dates, photos you choose to send).</li>
-        <li>Basic analytics (page views) through your browser or any embedded tools you use (e.g., Google Forms or Calendly).</li>
-      </ul>
-      <h3>How We Use Information</h3>
-      <ul class="list">
-        <li>To respond to inquiries, schedule services, and provide quotes.</li>
-        <li>To improve our services and website content.</li>
-        <li>To send updates related to your requested service.</li>
-      </ul>
-      <h3>Sharing</h3>
-      <p>We do not sell your personal information. We may share limited details with service tools we use (e.g., Google Forms, Calendly) to process your booking, or as required by law.</p>
-      <h3>Data Retention</h3>
-      <p>We retain inquiry details for as long as necessary to provide services and keep business records. You may request deletion by contacting us.</p>
-      <h3>Your Choices</h3>
-      <p>You can request access, correction, or deletion of your information by emailing <a href="mailto:swiftmovexeme@gmail.com">swiftmovexeme@gmail.com</a>.</p>
-      <h3>Third-Party Links</h3>
-      <p>Our site may link to third-party services. Their privacy practices are their own; review their policies.</p>
-      <h3>Contact</h3>
-      <p>Questions? Email <a href="mailto:swiftmovexeme@gmail.com">swiftmovexeme@gmail.com</a>.</p>
-      <div class="modal-actions">
-        <button class="btn" data-close>Close</button>
-      </div>
-    </div>
-  </div>
+</body>
+</html>
 
-  <!-- Terms Modal -->
-  <div class="modal" id="terms-modal" role="dialog" aria-modal="true" aria-labelledby="terms-title">
-    <div class="modal-card">
-      <h2 id="terms-title">Terms of Service</h2>
-      <p><em>Last updated: <!-- Set date --> August 22, 2025</em></p>
-      <h3>1. Services</h3>
-      <p>SwiftMove provides appliance installation, furniture assembly, handyman work, pressure washing, and related services as booked by you (the "Customer").</p>
-      <h3>2. Estimates & Payment</h3>
-      <ul class="list">
-        <li>Estimates are based on the scope you provide and may be adjusted if the scope changes.</li>
-        <li>Payment is due upon completion unless otherwise agreed. We accept common payment methods (confirm at booking).</li>
-      </ul>
-      <h3>3. Customer Responsibilities</h3>
-      <ul class="list">
-        <li>Ensure safe access to the work area and disclose any hazards.</li>
-        <li>For gas and electrical work, Customer is responsible for providing compliant hookups and shutoff access unless we explicitly include materials/parts.</li>
-        <li>Secure pets and valuables prior to service.</li>
-      </ul>
-      <h3>4. Limits & Exclusions</h3>
-      <ul class="list">
-        <li>We are not responsible for pre‑existing damage or concealed conditions.</li>
-        <li>Pressure washing may not remove all stains and can expose underlying wear.</li>
-        <li>We do not perform code inspections or permitting unless agreed in writing.</li>
-      </ul>
-      <h3>5. Cancellations</h3>
-      <p>Please notify us as early as possible to reschedule. Short‑notice cancellations may incur a fee if we have already mobilized.</p>
-      <h3>6. Warranty</h3>
-      <p>We stand behind our workmanship. If there is an issue with our work within 14 days, contact us and we will make it right.</p>
-      <h3>7. Liability</h3>
-      <p>To the fullest extent permitted by law, SwiftMove’s liability is limited to the amount paid for the specific service giving rise to the claim.</p>
-      <h3>8. Contact</h3>
-      <p>For questions about these Terms, email <a href="mailto:swiftmovexeme@gmail.com">swiftmovexeme@gmail.com</a>.</p>
-      <div class="modal-actions">
-        <button class="btn" data-close>Close</button>
-      </div>
-    </div>
-  </div>
+<!-- ================= Moving Page ================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moving Services - SwiftMove</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#001f3f] text-white">
 
-  <script>
-    // Open/Close Modals
-    const openLinks = document.querySelectorAll('[data-open]');
-    const closeButtons = document.querySelectorAll('[data-close]');
-    const modals = {
-      privacy: document.getElementById('privacy-modal'),
-      terms: document.getElementById('terms-modal')
-    };
-    openLinks.forEach(link => link.addEventListener('click', e => {
-      e.preventDefault();
-      const id = link.getAttribute('data-open');
-      modals[id]?.classList.add('open');
-    }));
-    closeButtons.forEach(btn => btn.addEventListener('click', () => {
-      Object.values(modals).forEach(m => m.classList.remove('open'));
-    }));
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') Object.values(modals).forEach(m => m.classList.remove('open')); });
+<header class="flex justify-between items-center p-6 border-b border-gold/20 bg-[#001a36]">
+  <img src="/logo.png" class="h-10" />
+  <span class="text-gold text-lg">Moving Made Easy.</span>
+</header>
 
-    // Accessible backdrop close
-    Object.values(modals).forEach(m => m.addEventListener('click', (e) => { if (e.target === m) m.classList.remove('open'); }));
-  </script>
+<section class="py-16 px-8 text-center">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-28 mx-auto mb-6" fill="none" stroke="#d4af37" stroke-width="1.5" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M3 7h11v8H3zM14 10h3l3 3v2h-6zM5 19a2 2 0 11.001-3.999A2 2 0 015 19zm10 0a2 2 0 11.001-3.999A2 2 0 0115 19z"/>
+  </svg>
+  <h1 class="text-4xl text-gold font-bold mb-4">Moving Services</h1>
+  <p class="text-lg text-gold/80 mb-8 max-w-2xl mx-auto">Fast, reliable, and careful moving services for apartments, homes, and offices.</p>
+  <a href="contact.html" class="px-8 py-4 bg-gold text-[#001f3f] rounded-xl shadow-xl font-bold">Book Moving</a>
+</section>
 
-  <!-- LocalBusiness Schema for better SEO -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "SwiftMove",
-    "image": "https://images.unsplash.com/photo-1581579188871-45ea61f2a0c8?q=80&w=1200&auto=format&fit=crop",
-    "telephone": "+1-831-330-0027",
-    "email": "swiftmovexeme@gmail.com",
-    "areaServed": ["Monterey County", "Santa Cruz County"],
-    "url": "https://Swiftter574.github.io/SwiftMove-Site/",
-    "sameAs": [],
-    "description": "Appliance installation, furniture assembly, handyman, and pressure washing services.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Santa Cruz County",
-      "addressRegion": "CA",
-      "addressCountry": "US"
-    }
-  }
-  </script>
+</body>
+</html>
+
+<!-- ================= Pressure Washing Page ================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pressure Washing - SwiftMove</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#001f3f] text-white">
+
+<header class="flex justify-between items-center p-6 border-b border-gold/20 bg-[#001a36]">
+  <img src="/logo.png" class="h-10" />
+  <span class="text-gold text-lg">Moving Made Easy.</span>
+</header>
+
+<section class="py-16 px-8 text-center">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-28 mx-auto mb-6" fill="none" stroke="#d4af37" stroke-width="1.5" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M3 12h4l3 8h2l3-14h5"/>
+  </svg>
+  <h1 class="text-4xl text-gold font-bold mb-4">Pressure Washing</h1>
+  <p class="text-lg text-gold/80 mb-8 max-w-2xl mx-auto">Deep exterior cleaning for driveways, patios, fences, siding, and more.</p>
+  <a href="contact.html" class="px-8 py-4 bg-gold text-[#001f3f] rounded-xl shadow-xl font-bold">Book Pressure Washing</a>
+</section>
+
+</body>
+</html>
+
+<!-- ================= Handyman Page ================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Handyman Services - SwiftMove</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#001f3f] text-white">
+
+<header class="flex justify-between items-center p-6 border-b border-gold/20 bg-[#001a36]">
+  <img src="/logo.png" class="h-10" />
+  <span class="text-gold text-lg">Moving Made Easy.</span>
+</header>
+
+<section class="py-16 px-8 text-center">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-28 mx-auto mb-6" fill="none" stroke="#d4af37" stroke-width="1.5" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M4 3l6 1 3 3-2 2-3-3-4 12h-2zM12 12l8 8"/>
+  </svg>
+  <h1 class="text-4xl text-gold font-bold mb-4">Handyman Services</h1>
+  <p class="text-lg text-gold/80 mb-8 max-w-2xl mx-auto">Repairs, installations, small fixes, and professional handyman solutions.</p>
+  <a href="contact.html" class="px-8 py-4 bg-gold text-[#001f3f] rounded-xl shadow-xl font-bold">Book Handyman</a>
+</section>
+
+</body>
+</html>
+
+<!-- ================= Furniture Assembly Page ================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Furniture Assembly - SwiftMove</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#001f3f] text-white">
+
+<header class="flex justify-between items-center p-6 border-b border-gold/20 bg-[#001a36]">
+  <img src="/logo.png" class="h-10" />
+  <span class="text-gold text-lg">Moving Made Easy.</span>
+</header>
+
+<section class="py-16 px-8 text-center">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-28 mx-auto mb-6" fill="none" stroke="#d4af37" stroke-width="1.5" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h11l4-2v8l-4-2H3zM18 12h3"/>
+  </svg>
+  <h1 class="text-4xl text-gold font-bold mb-4">Furniture Assembly</h1>
+  <p class="text-lg text-gold/80 mb-8 max-w-2xl mx-auto">Professional assembly for beds, dressers, tables, shelves, and custom builds.</p>
+  <a href="contact.html" class="px-8 py-4 bg-gold text-[#001f3f] rounded-xl shadow-xl font-bold">Book Assembly</a>
+</section>
+
+</body>
+</html>
+
+<!-- ================= Contact Page ================= -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact SwiftMove</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#001f3f] text-white">
+
+<header class="flex justify-between items-center p-6 border-b border-gold/20 bg-[#001a36]">
+  <img src="/logo.png" class="h-10" />
+  <span class="text-gold text-lg">Moving Made Easy.</span>
+</header>
+
+<section class="py-20 px-8 text-center">
+  <h1 class="text-4xl text-gold font-bold mb-6">Contact Us</h1>
+  <p class="text-lg text-gold/80 mb-10">Have questions or want to book a service? Send us a message.</p>
+
+  <form class="max-w-xl mx-auto grid gap-6">
+    <input type="text" placeholder="Your Name" class="p-4 rounded-lg text-black" />
+    <input type="email" placeholder="Email" class="p-4 rounded-lg text-black" />
+    <textarea placeholder="Message" class="p-4 rounded-lg text-black h-32"></textarea>
+    <button class="px-8 py-4 bg-gold text-[#001f3f] font-bold rounded-xl shadow-xl">Send Message</button>
+  </form>
+</section>
+
 </body>
 </html>
