@@ -245,28 +245,6 @@
   position: relative;
 }
 
-/* Faded see-through edges */
-.slider::before,
-.slider::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 20%;              /* make the fade wider so the next image shows */
-  height: 100%;
-  z-index: 5;
-  pointer-events: none;
-}
-
-.slider::before {
-  left: 0;
-  background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0));
-}
-
-.slider::after {
-  right: 0;
-  background: linear-gradient(to left, rgba(0,0,0,0.6), rgba(0,0,0,0));
-}
-
 /* Track */
 .slider-track {
   display: flex;
@@ -287,6 +265,9 @@
 }
 </style>
 
+  <section id="recent-work">
+  <h2 style="text-align:center; margin-top:40px;">Recent Jobs</h2>
+    
 <!-- HTML FOR SLIDER -->
 <div class="slider">
   <div class="slider-track">
