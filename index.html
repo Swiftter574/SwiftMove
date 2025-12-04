@@ -231,22 +231,82 @@
     </div>
   </section>
 
+  <style>
+    
   <!-- Gallery -->
-  <section id="gallery">
-    <div class="container">
-      <div class="section-head">
-        <h2 class="section-title">Recent Work</h2>
-        <p class="kicker">A few shots from jobs around the area.</p>
+ /* Slider container */
+.slider {
+  width: 100%;
+  max-width: 900px;
+  margin: 60px auto;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+/* Track for slides */
+.slider-track {
+  display: flex;
+  animation: slideLoop 20s linear infinite;
+}
+
+/* Each slide */
+.slide {
+  min-width: 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Animation */
+@keyframes slideLoop {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(0); }
+
+  25% { transform: translateX(-100%); }
+  45% { transform: translateX(-100%); }
+
+  50% { transform: translateX(-200%); }
+  70% { transform: translateX(-200%); }
+
+  75% { transform: translateX(-300%); }
+  95% { transform: translateX(-300%); }
+
+  100% { transform: translateX(0); }
+}
+
+  <style>
+    
+  <section id="recent-work">
+  <h2 style="text-align:center; margin-top:40px;">Recent Jobs</h2>
+
+  <div class="slider">
+    <div class="slider-track">
+
+      <div class="slide">
+        <img src="images/IMG_1608.jpeg" alt="Recent job photo 1">
       </div>
-      <div class="gallery">
-        <img src="https://images.unsplash.com/photo-1600490036275-35f7aa8c0f62?q=80&w=800&auto=format&fit=crop" alt="Assembled modern desk" loading="lazy" />
-        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=800&auto=format&fit=crop" alt="Living room after furniture assembly" loading="lazy" />
-        <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=800&auto=format&fit=crop" alt="Pressure washed patio" loading="lazy" />
-        <img src="https://images.unsplash.com/photo-1586201375761-83865001e31b?q=80&w=800&auto=format&fit=crop" alt="Appliance installation" loading="lazy" />
+
+      <div class="slide">
+        <img src="images/IMG_1616.jpeg" alt="Recent job photo 2">
       </div>
-      <p class="mini mt-3">Replace these photos with your own: upload images to your repo (e.g., <code>assets/</code>) and update the <code>src</code> s.</p>
+
+      <div class="slide">
+        <img src="images/IMG_1296.jpeg" alt="Recent job photo 3">
+      </div>
+
+      <div class="slide">
+        <img src="images/IMG_1297.jpeg" alt="Recent job photo 4">
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
+
   
   <!-- About -->
   <section id="about">
