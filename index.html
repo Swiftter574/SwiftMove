@@ -44,105 +44,32 @@
     .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
     /* Header */
-header {
-  position: sticky;       /* keeps header on top */
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  background: transparent; /* lets the background image show */
-  padding: 14px 0;
-}
+   header {
+      position: sticky; top: 0; z-index: 40;
+      background: rgba(255,255,255,0.75);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: 0.2px; }
+    .brand .logo {
+      width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center;
+      background: linear-gradient(135deg, var(--brand), #38bdf8);
+      color: white; font-weight: 800;
+      box-shadow: var(--shadow);
+    }
+    .nav a { font-weight: 600; }
+    .nav-links { display: none; gap: 18px; }
+    .cta { display: flex; gap: 10px; align-items: center; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 16px; border-radius: 999px; border: 1px solid #e2e8f0; background: white; font-weight: 600; }
+    .btn:hover { border-color: var(--brand); }
+    .btn.primary { background: var(--brand); color: white; border-color: var(--brand); box-shadow: var(--shadow); }
+    .btn.primary:hover { background: var(--brand-600); }
+    .btn.ghost { background: transparent; }
 
-/* Nav Layout */
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* Brand Logo + Text */
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 800;
-  letter-spacing: 0.2px;
-}
-
-.brand .logo {
-  width: 40px;
-  height: 40px;
-  border-radius: 12px;
-  display: grid;
-  place-items: center;
-  background: gold;       /* gold logo */
-  color: black;           /* logo text */
-  font-weight: 800;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-  font-size: 1rem;
-}
-
-.brand a {
-  color: gold;           /* SwiftMove text */
-  text-decoration: none;
-  font-size: 1.2rem;
-}
-
-/* Nav Links */
-.nav a {
-  font-weight: 600;
-  color: gold;
-}
-
-/* CTA Buttons */
-.cta {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 10px 16px;
-  border-radius: 999px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-
-.btn.primary {
-  background: gold;
-  color: black;
-  border: 2px solid gold;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-}
-
-.btn.primary:hover {
-  background: #FFD700; /* slightly brighter gold on hover */
-}
-
-.btn.ghost {
-  background: transparent;
-  color: gold;
-  border: 2px solid gold;
-}
-
-.btn.ghost:hover {
-  opacity: 0.8;
-}
-
-/* Responsive Nav Links */
-.nav-links { display: none; gap: 18px; }
-
-@media (min-width: 900px) {
-  .nav-links { display: flex; }
-}
+    @media (min-width: 900px) {
+      .nav-links { display: flex; }
+    }
     /* Hero */
     .hero { padding: 64px 0 28px; }
     .hero-wrap { display: grid; gap: 28px; align-items: center; }
