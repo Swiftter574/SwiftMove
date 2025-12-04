@@ -231,9 +231,11 @@
     </div>
   </section>
 
-  <!-- Gallery -->
-  
-  <style>
+ <!-- SLIDERS (Photos + Reviews) -->
+<style>
+
+/* ---------------- SLIDER (Photos + Reviews) ---------------- */
+
 .slider {
   width: 100%;
   max-width: 900px;
@@ -242,23 +244,40 @@
   border-radius: 12px;
 }
 
-/* Track for slides */
 .slider-track {
   display: flex;
-  animation: slideLoop 20s linear infinite;
+  animation: slideLoop 25s linear infinite;
 }
 
-/* Each slide */
 .slide {
   min-width: 100%;
+  padding: 20px;
 }
 
+/* Photo slides */
 .slide img {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover;
   border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Reviews styling */
+.review-box {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  font-size: 1.1em;
+  line-height: 1.6em;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.review-stars {
+  color: gold;
+  font-size: 1.4em;
+  margin-bottom: 10px;
 }
 
 /* Animation */
@@ -267,44 +286,47 @@
   20% { transform: translateX(0); }
 
   25% { transform: translateX(-100%); }
-  45% { transform: translateX(-100%); }
+  40% { transform: translateX(-100%); }
 
-  50% { transform: translateX(-200%); }
-  70% { transform: translateX(-200%); }
+  45% { transform: translateX(-200%); }
+  60% { transform: translateX(-200%); }
 
-  75% { transform: translateX(-300%); }
-  95% { transform: translateX(-300%); }
+  65% { transform: translateX(-300%); }
+  80% { transform: translateX(-300%); }
 
   100% { transform: translateX(0); }
 }
-  <style>
-    
-  <section id="recent-work">
+
+</style>
+
+
+<!-- ===================== PHOTO SLIDER ===================== -->
+
+<section id="recent-work">
   <h2 style="text-align:center; margin-top:40px;">Recent Jobs</h2>
 
   <div class="slider">
     <div class="slider-track">
 
       <div class="slide">
-        <img src="images/IMG_1608.jpeg" alt="Recent job photo 1">
+        <img src="images/job1.jpg" alt="Job photo 1">
       </div>
 
       <div class="slide">
-        <img src="images/IMG_1616.jpeg" alt="Recent job photo 2">
+        <img src="images/job2.jpg" alt="Job photo 2">
       </div>
 
       <div class="slide">
-        <img src="images/IMG_1296.jpeg" alt="Recent job photo 3">
+        <img src="images/job3.jpg" alt="Job photo 3">
       </div>
 
       <div class="slide">
-        <img src="images/IMG_1297.jpeg" alt="Recent job photo 4">
+        <img src="images/job4.jpg" alt="Job photo 4">
       </div>
 
     </div>
   </div>
 </section>
-
   
   <!-- About -->
   <section id="about">
