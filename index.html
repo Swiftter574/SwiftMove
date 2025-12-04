@@ -259,25 +259,50 @@
   object-fit: cover;
   border-radius: 18px;
 }
+    /* Infinite scrolling slider */
+.slider-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 40s linear infinite;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
 </style>
-  <section id="recent-work">
+ <section id="recent-work">
   <h2 style="text-align:center; margin-top:40px;">Recent Jobs</h2>
 
-    <div class="slider">
-  <div class="slider-track">
-    <div class="slide"><img src="images/IMG_1608.jpeg"></div>
-    <div class="slide"><img src="images/IMG_1616.jpeg"></div>
-    <div class="slide"><img src="images/IMG_1296.jpeg"></div>
-    <div class="slide"><img src="images/IMG_1297.jpeg"></div>
-    <div class="Slide"><img src="images/IMG_0933.jpeg"></div>
-    <div class="Slide"><img src="images/IMG_1254.jpeg"></div>
-    <div class="Slide"><img src="images/IMG_0911.jpeg"></div>
-    <div class="Slide"><img src="images/IMG_1015.jpeg"></div>
-    <div class="Slide"><img src="images/IMG_1016.jpeg"></div>
-    <div class="Slide"><img src="images/IMG_1075.jpeg"></div>
-    <div class="Slide"><img src="images/IMG_1086.jpeg"></div>
+  <div class="slider">
+    <div class="slider-track">
+
+      <div class="slide"><img src="images/IMG_1608.jpeg"></div>
+      <div class="slide"><img src="images/IMG_1616.jpeg"></div>
+      <div class="slide"><img src="images/IMG_1296.jpeg"></div>
+      <div class="slide"><img src="images/IMG_1297.jpeg"></div>
+      <div class="slide"><img src="images/IMG_0933.jpeg"></div>
+      <div class="slide"><img src="images/IMG_1254.jpeg"></div>
+      <div class="slide"><img src="images/IMG_0911.jpeg"></div>
+      <div class="slide"><img src="images/IMG_1015.jpeg"></div>
+      <div class="slide"><img src="images/IMG_1016.jpeg"></div>
+      <div class="slide"><img src="images/IMG_1075.jpeg"></div>
+      <div class="slide"><img src="images/IMG_1086.jpeg"></div>
+
+       <!-- DUPLICATE SET FOR LOOP -->
+      <div class="slide"><img src="images/IMG_1608.jpeg"></div>
+      <div class="slide"><img src="images/IMG_1616.jpeg"></div>
+      <div class="slide"><img src="images/IMG_1296.jpeg"></div>
+      <div class="slide"><img src="images/IMG_1297.jpeg"></div>
+      <div class="slide"><img src="images/IMG_0933.jpeg"></div>
+      <div class="slide"><img src="images/IMG_1254.jpeg"></div>
+      <div class="slide"><img src="images/IMG_0911.jpeg"></div>
+      <div class="slide"><img src="images/IMG_1015.jpeg"></div>
+      <div class="slide"><img src="images/IMG_1016.jpeg"></div>
+      <div class="slide"><img src="images/IMG_1075.jpeg"></div>
+      <div class="slide"><img src="images/IMG_1086.jpeg"></div>
   </div>
-</div>
+</section>
 
 <script>
 let current = 0;
