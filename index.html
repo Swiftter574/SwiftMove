@@ -235,61 +235,52 @@
 </section>
   </div>
    <style>
-<!-- =================== SQUARE 5x7 INFINITE SLIDER =================== -->
-<style>
 
-/* --- SLIDER WRAPPER --- */
 .slider {
   width: 100%;
-  max-width: 420px; /* 5x7 portrait look */
+  max-width: 420px; /* same width you liked */
   margin: 40px auto;
   overflow: hidden;
   border-radius: 18px;
   position: relative;
 }
 
-/* See-through edges showing NEXT photo */
+/* see-through edges */
 .slider::before,
 .slider::after {
   content: "";
   position: absolute;
   top: 0;
-  width: 20%;
+  width: 15%;
   height: 100%;
   z-index: 5;
   pointer-events: none;
-}
-
-.slider::before {
-  left: 0;
-  background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0));
+  background: linear-gradient(to right, rgba(0,0,0,0.3), rgba(0,0,0,0));
 }
 
 .slider::after {
   right: 0;
-  background: linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255,0));
+  background: linear-gradient(to left, rgba(0,0,0,0.3), rgba(0,0,0,0));
 }
 
-/* --- TRACK THAT MOVES --- */
 .slider-track {
   display: flex;
   transition: transform 0.8s ease-in-out;
 }
 
-/* --- EACH SLIDE (PORTRAIT 5x7) --- */
 .slide {
   min-width: 100%;
 }
 
+/* NEW HEIGHT based on your screenshot (≈ 4:3 shape) */
 .slide img {
   width: 100%;
-  height: 560px; /* portrait height */
+  height: 300px;  /* <<<<< THIS matches your example */
   object-fit: cover;
   border-radius: 18px;
 }
 
 </style>
-
 
 <!-- =================== SLIDER HTML =================== -->
 
