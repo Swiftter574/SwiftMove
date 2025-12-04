@@ -234,71 +234,82 @@
  <!-- SLIDERS (Photos + Reviews) -->
 </section>
   </div>
-   <style>
-
+  <style>
+/* Slider container */
 .slider {
   width: 100%;
-  max-width: 420px; /* same width you liked */
+  max-width: 420px; /* Same size you liked */
   margin: 40px auto;
   overflow: hidden;
   border-radius: 18px;
   position: relative;
 }
 
-/* see-through edges */
+/* Faded see-through edges */
 .slider::before,
 .slider::after {
   content: "";
   position: absolute;
   top: 0;
-  width: 15%;
+  width: 20%;              /* make the fade wider so the next image shows */
   height: 100%;
   z-index: 5;
   pointer-events: none;
-  background: linear-gradient(to right, rgba(0,0,0,0.3), rgba(0,0,0,0));
+}
+
+.slider::before {
+  left: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0));
 }
 
 .slider::after {
   right: 0;
-  background: linear-gradient(to left, rgba(0,0,0,0.3), rgba(0,0,0,0));
+  background: linear-gradient(to left, rgba(0,0,0,0.6), rgba(0,0,0,0));
 }
 
+/* Track */
 .slider-track {
   display: flex;
-  transition: transform 0.8s ease-in-out;
+  transition: transform 0.7s ease-in-out;
 }
 
+/* Slide */
 .slide {
   min-width: 100%;
 }
 
-/* NEW HEIGHT based on your screenshot (≈ 4:3 shape) */
+/* 5:7 aspect ratio images */
 .slide img {
   width: 100%;
-  height: 300px;  /* <<<<< THIS matches your example */
+  height: 580px;   /* ✔ matches 5×7 crop from iPhone */
   object-fit: cover;
   border-radius: 18px;
 }
-
 </style>
 
-<!-- =================== SLIDER HTML =================== -->
-
-<section id="recent-work">
-  <h2 style="text-align:center; margin-top:40px;">Recent Jobs</h2>
-
-  <div class="slider">
-    <div class="slider-track" id="sliderTrack">
-
-      <div class="slide"><img src="images/IMG_1608.jpeg"></div>
-      <div class="slide"><img src="images/IMG_1616.jpeg"></div>
-      <div class="slide"><img src="images/IMG_1296.jpeg"></div>
-      <div class="slide"><img src="images/IMG_1297.jpeg"></div>
-
-    </div>
+<!-- HTML FOR SLIDER -->
+<div class="slider">
+  <div class="slider-track">
+    <div class="slide"><img src="images/IMG_1608.jpeg"></div>
+    <div class="slide"><img src="images/IMG_1616.jpeg"></div>
+    <div class="slide"><img src="images/IMG_1296.jpeg"></div>
+    <div class="slide"><img src="images/IMG_1297.jpeg"></div>
   </div>
-</section>
+</div>
 
+<script>
+let current = 0;
+const track = document.querySelector(".slider-track");
+const slides = document.querySelectorAll(".slide");
+const total = slides.length;
+
+function moveSlider() {
+  current = (current + 1) % total;
+  track.style.transform = `translateX(-${current * 100}%)`;
+}
+
+setInterval(moveSlider, 3000);
+</script>
 
 <!-- =================== INFINITE LOOP JS =================== -->
 
