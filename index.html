@@ -231,7 +231,6 @@
     </div>
   </section>
 
- <!-- SLIDERS (Photos + Reviews) -->
 </section>
   </div>
   <style>
@@ -244,18 +243,15 @@
   border-radius: 18px;
   position: relative;
 }
-
 /* Track */
 .slider-track {
   display: flex;
   transition: transform 0.7s ease-in-out;
 }
-
 /* Slide */
 .slide {
   min-width: 100%;
 }
-
 /* 5:7 aspect ratio images */
 .slide img {
   width: 100%;
@@ -264,17 +260,21 @@
   border-radius: 18px;
 }
 </style>
-
   <section id="recent-work">
   <h2 style="text-align:center; margin-top:40px;">Recent Jobs</h2>
-    
-<!-- HTML FOR SLIDER -->
 <div class="slider">
   <div class="slider-track">
     <div class="slide"><img src="images/IMG_1608.jpeg"></div>
     <div class="slide"><img src="images/IMG_1616.jpeg"></div>
     <div class="slide"><img src="images/IMG_1296.jpeg"></div>
     <div class="slide"><img src="images/IMG_1297.jpeg"></div>
+    <div class="Slide"><img src="images/IMG_0933.jpeg"></div>
+    <div class="Slide"><img src="images/IMG_1254.jpeg"></div>
+    <div class="Slide"><img src="images/IMG_0911.jpeg"></div>
+    <div class="Slide"><img src="images/IMG_1015.jpeg"></div>
+    <div class="Slide"><img src="images/IMG_1016.jpeg"></div>
+    <div class="Slide"><img src="images/IMG_1075.jpeg"></div>
+    <div class="Slide"><img src="images/IMG_1086.jpeg"></div>
   </div>
 </div>
 
@@ -288,12 +288,8 @@ function moveSlider() {
   current = (current + 1) % total;
   track.style.transform = `translateX(-${current * 100}%)`;
 }
-
 setInterval(moveSlider, 3000);
 </script>
-
-<!-- =================== INFINITE LOOP JS =================== -->
-
 <script>
 let track = document.getElementById("sliderTrack");
 let slides = document.querySelectorAll(".slide");
