@@ -235,118 +235,111 @@
 </section>
   </div>
    <style>
+<!-- =================== SQUARE 5x7 INFINITE SLIDER =================== -->
+<style>
 
-/* ---------------- SLIDER ---------------- */
-
+/* --- SLIDER WRAPPER --- */
 .slider {
   width: 100%;
-  max-width: 700px; /* smaller width */
+  max-width: 420px; /* 5x7 portrait look */
   margin: 40px auto;
   overflow: hidden;
-  border-radius: 16px;
+  border-radius: 18px;
   position: relative;
 }
 
-/* Fade sides */
+/* See-through edges showing NEXT photo */
 .slider::before,
 .slider::after {
   content: "";
   position: absolute;
   top: 0;
-  width: 15%;
+  width: 20%;
   height: 100%;
   z-index: 5;
+  pointer-events: none;
 }
 
 .slider::before {
   left: 0;
-  background: linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0));
+  background: linear-gradient(to right, rgba(255,255,255,0), rgba(255,255,255,0));
 }
 
 .slider::after {
   right: 0;
-  background: linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,0));
+  background: linear-gradient(to left, rgba(255,255,255,0), rgba(255,255,255,0));
 }
 
+/* --- TRACK THAT MOVES --- */
 .slider-track {
   display: flex;
-  animation: slideLoop 25s linear infinite;
+  transition: transform 0.8s ease-in-out;
 }
 
-/* Smaller slides */
+/* --- EACH SLIDE (PORTRAIT 5x7) --- */
 .slide {
   min-width: 100%;
-  padding: 10px; /* reduced padding */
 }
 
 .slide img {
   width: 100%;
-  height: 250px;        /* smaller height */
-  object-fit: cover;    /* keep it clean */
-  border-radius: 12px;
-  display: block;
-}
-
-/* Reviews box smaller */
-.review-box {
-  background: #ffffffcc; /* transparent white */
-  border-radius: 12px;
-  padding: 20px;
-  font-size: 1em;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
-
-.review-stars {
-  color: gold;
-  font-size: 1.2em;
-  margin-bottom: 8px;
-}
-
-/* Animation */
-@keyframes slideLoop {
-  0% { transform: translateX(0); }
-  20% { transform: translateX(0); }
-
-  25% { transform: translateX(-100%); }
-  40% { transform: translateX(-100%); }
-
-  45% { transform: translateX(-200%); }
-  60% { transform: translateX(-200%); }
-
-  65% { transform: translateX(-300%); }
-  80% { transform: translateX(-300%); }
-
-  100% { transform: translateX(0); }
+  height: 560px; /* portrait height */
+  object-fit: cover;
+  border-radius: 18px;
 }
 
 </style>
 
-<!-- ===================== PHOTO SLIDER ===================== -->
+
+<!-- =================== SLIDER HTML =================== -->
 
 <section id="recent-work">
   <h2 style="text-align:center; margin-top:40px;">Recent Jobs</h2>
 
   <div class="slider">
-    <div class="slider-track">
+    <div class="slider-track" id="sliderTrack">
 
-      <div class="slide">
-        <img src="images/IMG_1608.jpeg" alt="Job photo 1">
-      </div>
-
-      <div class="slide">
-        <img src="images/IMG_1616.jpeg" alt="Job photo 2">
-      </div>
-
-      <div class="slide">
-        <img src="images/IMG_1296.jpeg" alt="Job photo 3">
-      </div>
-
-      <div class="slide">
-        <img src="images/IMG_1297.jpeg" alt="Job photo 4">
-      </div>
+      <div class="slide"><img src="images/IMG_1608.jpeg"></div>
+      <div class="slide"><img src="images/IMG_1616.jpeg"></div>
+      <div class="slide"><img src="images/IMG_1296.jpeg"></div>
+      <div class="slide"><img src="images/IMG_1297.jpeg"></div>
 
     </div>
+  </div>
+</section>
+
+
+<!-- =================== INFINITE LOOP JS =================== -->
+
+<script>
+let track = document.getElementById("sliderTrack");
+let slides = document.querySelectorAll(".slide");
+let index = 0;
+
+function nextSlide() {
+  index++;
+  track.style.transform = `translateX(-${index * 100}%)`;
+
+  // Reset instantly when reaching the end
+  if (index === slides.length) {
+    setTimeout(() => {
+      track.style.transition = "none";
+      track.style.transform = "translateX(0)";
+      index = 0;
+
+      // Re-enable smooth animation
+      setTimeout(() => {
+        track.style.transition = "transform 0.8s ease-in-out";
+      }, 50);
+    }, 800);
+  }
+}
+
+setInterval(nextSlide, 3000); // slide every 3 seconds
+</script>
+
+<!-- =================== END SLIDER =================== -->
+     </div>
   </div>
 </section>
   
