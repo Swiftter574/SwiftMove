@@ -152,17 +152,61 @@
 </header>
 
 <!-- Hero Section -->
-<section id="top" style="text-align:center; padding:80px 20px; background:#f4f4f4;">
-  <h1 style="font-size:3em; margin-bottom:10px;">SwiftMove</h1>
-  <p style="font-size:1.2em; margin-bottom:20px;">
-    Trade Company
-  </p>
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdU_9Je91Gn2PZiMNwpkCdTuw-ClGOK0rgJOko4IQ9Fm6j69g/viewform" 
-     style="display:inline-block; padding:15px 30px; background:#007bff; color:white; text-decoration:none; border-radius:5px; font-weight:bold;">
+<section id="top" class="hero">
+  <h1>SwiftMove</h1>
+  <p>Trade Company</p>
+
+  <a class="hero-btn" 
+     href="https://docs.google.com/forms/d/e/1FAIpQLSdU_9Je91Gn2PZiMNwpkCdTuw-ClGOK0rgJOko4IQ9Fm6j69g/viewform">
     Book a Service
+   
+    <style>
+      
+  /* HERO SECTION */
+.hero {
+  background-color: #001A33; /* Deep navy blue */
+  color: gold;
+  text-align: center;
+  padding: 120px 20px;
+  font-family: "Times New Roman", Times, serif;
+}
+/* Main company name */
+.hero h1 {
+  font-size: 3.8rem;
+  margin: 0 0 10px;
+  color: gold;
+  font-weight: 700;
+}
+
+/* “Trade Company” text */
+.hero p {
+  font-size: 1.8rem;
+  margin: 0 0 30px;
+  color: gold;
+}
+
+/* Red button */
+.hero-btn {
+  display: inline-block;
+  padding: 15px 35px;
+  background: #c40000; /* elegant deep red */
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+/* Button hover */
+.hero-btn:hover {
+  background: #ff0000; /* brighter red on hover */
+  transform: translateY(-2px);
+}
   </a>
 </section>
 
+  
 <!-- Services Section -->
 <section id="services" style="padding:60px 20px; text-align:center;">
   <h2 style="font-size:2em; margin-bottom:40px;">Our Services</h2>
