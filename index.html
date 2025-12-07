@@ -1,452 +1,562 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SwiftMove — Fast, Reliable Home Services in Monterey & Santa Cruz</title>
-  <meta name="description" content="SwiftMove provides appliance installation, furniture assembly, handyman work, and pressure washing. Veteran-owned. Serving Monterey County, Santa Cruz County, and nearby areas." />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>SwiftMove — Fast, Reliable Services</title>
 
-  <style>
-    :root {
-      --deep-blue: #001F4D;
-      --gold: #FFD700;
-      --white: #ffffff;
-      --muted: #A0AEC0;
-      --card: #ffffff;
-      --radius: 16px;
-      --shadow: 0 10px 25px rgba(0,0,0,0.15);
-    }
-    * { box-sizing: border-box; }
-    body { margin:0; font-family: Inter, sans-serif; background: var(--white); color: var(--deep-blue); line-height: 1.6; }
-    a { color: var(--deep-blue); text-decoration: none; }
-    img { max-width:100%; border-radius:12px; display:block; }
-    .container { max-width:1200px; margin:0 auto; padding:0 20px; }
+<style>
+/* ------------------------------
+   GLOBAL STYLES
+------------------------------ */
 
-    header { position: sticky; top:0; z-index:40; background: var(--white); border-bottom:1px solid var(--muted); }
-    .nav { display:flex; justify-content: space-between; align-items:center; padding:14px 0; }
-    .brand { font-weight: 800; color: var(--deep-blue); font-size:1.25rem; display:flex; align-items:center; gap:12px; }
-    .logo { width:40px; height:40px; border-radius:10px; background:linear-gradient(135deg,var(--deep-blue),#274a83); color:var(--gold); display:grid; place-items:center; font-weight:800; box-shadow: var(--shadow); }
-    .btn { padding:8px 14px; border-radius:999px; font-weight:600; cursor:pointer; border:1px solid rgba(0,0,0,0.06); background:var(--white); }
-    .btn.primary { background: var(--gold); color: var(--deep-blue); border:none; }
-    .btn.primary:hover { opacity:0.95; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0A1A2F;
+  color: white;
+}
 
-    /* Hero */
-    .hero { background: var(--deep-blue); color: var(--white); text-align:center; padding:110px 20px; }
-    .hero h1 { font-size:72px; margin:0; line-height:0.95; }
-    .hero p { font-size:1.4rem; margin:12px 0 28px; color: rgba(255,255,255,0.92); }
-    .hero-btn { background: var(--gold); color: var(--deep-blue); padding:12px 30px; border-radius:8px; font-size:1.05rem; font-weight:700; text-decoration:none; display:inline-block; transition:0.18s; }
-    .hero-btn:hover { transform:translateY(-3px); opacity:0.95; }
+h2 {
+  color: #FFD700;
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
 
-    section { padding:56px 0; }
-    h2.section-title { color: var(--deep-blue); font-size:2em; margin:0 0 28px; text-align:center; }
+section {
+  padding: 40px 20px;
+}
 
-    /* Cards grid */
-    .grid { display:grid; gap:24px; justify-content:center; }
-    @media(min-width:700px){.grid.cols-2{grid-template-columns:repeat(2,1fr);}}
-    @media(min-width:960px){.grid.cols-3{grid-template-columns:repeat(3,1fr);}}
-    @media(min-width:1100px){.grid.cols-4{grid-template-columns:repeat(4,1fr);}}
-    .card { background: var(--card); border-radius: var(--radius); padding:18px; box-shadow: var(--shadow); text-align:center; border:1px solid rgba(0,0,0,0.04); }
-    .card h3 { margin:12px 0 6px; color: var(--deep-blue); }
-    .card p { color: var(--muted); margin:0; }
+/* ------------------------------
+   HERO SECTION
+------------------------------ */
 
-    /* Services images */
-    #services img { height:150px; object-fit:cover; }
+#hero {
+  background: url('your-hero.jpg') center/cover no-repeat;
+  padding: 130px 20px;
+  text-align: center;
+}
 
-    /* Reviews (infinite sliding) */
-    .reviews-slider { overflow:hidden; width:100%; padding:10px 0 0; }
-    .reviews-track { display:flex; gap:18px; align-items:start; width:calc(20 * 360px); /* large enough for many cards */ animation: scroll-reviews 32s linear infinite; }
-    .review-slide { flex:0 0 320px; scroll-snap-align:start; background:var(--card); border-radius:14px; padding:18px; box-shadow:var(--shadow); border:1px solid rgba(0,0,0,0.04); }
-    .stars { color:var(--gold); font-size:16px; }
-    .reviewer { font-weight:700; margin-top:10px; color:var(--deep-blue); }
-    @media(min-width:900px){ .review-slide { flex:0 0 360px; } }
+#hero h1 {
+  font-size: 48px;
+  color: #FFD700;
+}
 
-    @keyframes scroll-reviews {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
+#hero p {
+  max-width: 600px;
+  margin: 15px auto;
+  font-size: 20px;
+}
 
-    /* Recent Jobs slider (kept) */
-    .slider { overflow:hidden; width:100%; padding:20px 0; }
-    .slider-track { display:flex; width:calc(22 * 210px); animation: scroll 40s linear infinite; }
-    .slide { flex:0 0 210px; margin-right:10px; height:294px; }
-    .slide img { width:100%; height:100%; object-fit:contain; border-radius:8px; }
-    @keyframes scroll { 0% { transform:translateX(0);} 100%{ transform:translateX(-50%);} }
+/* ------------------------------
+   SERVICES SECTION
+------------------------------ */
 
-    /* FAQ */
-    details { background: var(--card); border-radius: var(--radius); padding:14px 16px; margin-bottom:10px; border:1px solid rgba(0,0,0,0.04); }
-    summary { cursor:pointer; font-weight:700; color: var(--deep-blue); }
+#services {
+  background: #10223F;
+}
 
-    /* Contact/map */
-    .contact-wrap { display:grid; gap:20px; grid-template-columns: 1fr; max-width:1100px; margin:0 auto; }
-    @media(min-width:960px){ .contact-wrap { grid-template-columns: 1fr 1fr; } }
-    .contact-card { background:var(--card); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); border:1px solid rgba(0,0,0,0.04); }
-    .map-iframe { width:100%; height:340px; border:0; border-radius:12px; }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  max-width: 1100px;
+  margin: auto;
+}
 
-    /* Footer */
-    footer { background: var(--deep-blue); color: var(--white); padding:36px 20px; }
-    .foot { max-width:1200px; margin:0 auto; display:grid; gap:20px; }
-    @media(min-width:960px){ .foot { grid-template-columns:1.2fr 1fr 1fr; align-items:start; } }
-    .mini { font-size:13px; color: rgba(255,255,255,0.9); }
-    footer a { color: var(--gold); text-decoration:none; }
-    .badges { display:flex; gap:8px; margin-top:12px; flex-wrap:wrap; }
-    .badge { background:var(--white); color:var(--deep-blue); padding:6px 10px; border-radius:999px; font-weight:700; font-size:13px; border:0; }
-  </style>
+.service-box {
+  background: #13294E;
+  padding: 18px;
+  border-radius: 10px;
+  text-align: center;
+  border: 2px solid #FFD700;
+}
+
+.service-box img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.service-box h3 {
+  margin: 12px 0 8px;
+  color: #FFD700;
+}
+
+.service-box p {
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+/* ------------------------------
+   REVIEWS SLIDER (INFINITE LOOP)
+------------------------------ */
+
+.reviews-slider {
+  overflow: hidden;
+  width: 100%;
+}
+
+.reviews-track {
+  display: flex;
+  width: max-content;
+  animation: slideReviews 22s linear infinite;
+}
+
+.review-card {
+  min-width: 280px;
+  max-width: 280px;
+  background: #13294E;
+  padding: 18px;
+  border-radius: 10px;
+  border: 2px solid #FFD700;
+  margin-right: 20px;
+}
+
+.review-card h4 {
+  color: #FFD700;
+  margin-bottom: 8px;
+}
+
+@keyframes slideReviews {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ------------------------------
+   RECENT JOBS (LEAVE AS IS)
+------------------------------ */
+
+.slider {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  animation: scroll 25s linear infinite;
+}
+
+.slider-track img {
+  width: 260px;
+  height: 190px;
+  object-fit: cover;
+  margin-right: 15px;
+  border-radius: 10px;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ------------------------------
+   FAQ SECTION
+------------------------------ */
+
+.faq-item {
+  background: #13294E;
+  padding: 15px;
+  border-radius: 8px;
+  border: 2px solid #FFD700;
+  margin-bottom: 15px;
+}
+
+/* ------------------------------
+   CONTACT (MAP ONLY)
+------------------------------ */
+
+#contact-map {
+  text-align: center;
+}
+
+#contact-map iframe {
+  width: 80%;
+  height: 320px;
+  border-radius: 12px;
+  border: 2px solid #FFD700;
+}
+
+/* ------------------------------
+   FOOTER
+------------------------------ */
+
+footer {
+  background: #0A1423;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+footer h3 {
+  color: #FFD700;
+}
+
+.footer-col {
+  width: 45%;
+  margin-bottom: 30px;
+}
+
+.footer-col a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-col a:hover {
+  color: #FFD700;
+}
+
+/* ------------------------------
+   PRIVACY + TERMS MODALS
+------------------------------ */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal-card {
+  background: white;
+  color: black;
+  max-width: 600px;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.modal-card h2 {
+  color: black;
+  text-align: left;
+}
+
+.modal-actions {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 18px;
+  background: #0A1A2F;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
+
+/* ------------------------------
+   🌟 MOBILE RESPONSIVE FIXES  
+------------------------------ */
+
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+
+  #hero h1 {
+    font-size: 34px;
+  }
+
+  #hero p {
+    font-size: 16px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-box img {
+    height: 190px;
+  }
+
+  .review-card {
+    min-width: 240px;
+    max-width: 240px;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-col {
+    width: 100%;
+  }
+
+  #contact-map iframe {
+    width: 95%;
+    height: 250px;
+  }
+}
+</style>
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-  <div class="container nav">
-    <div class="brand">
-      <a href="#top" aria-label="SwiftMove Home">SwiftMove</a>
+  <!-- HERO SECTION -->
+<section id="hero">
+  <h1>SwiftMove</h1>
+  <p>Fast, Reliable Home Services — Appliance Installation, Furniture Assembly, Handyman, Pressure Washing</p>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdU_9Je91Gn2PZiMNwpkCdTuw-ClGOK0rgJOko4IQ9Fm6j69g/viewform" 
+     style="display:inline-block; margin-top:15px; padding:12px 28px; background:#FFD700; color:#0A1A2F; border-radius:8px; font-weight:bold; text-decoration:none;">
+     Book a Service
+  </a>
+</section>
+
+<!-- SERVICES SECTION -->
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="services-grid">
+    <div class="service-box">
+      <img src="images/Appliance_installation.JPG" alt="Appliance Installation">
+      <h3>Appliance Installation</h3>
+      <p>Electric, Gas (Natural & Propane) — professional setup every time.</p>
     </div>
-
-    <div class="cta">
-      <a class="btn ghost" href="tel:+18317328777" aria-label="Call SwiftMove">
-        📞 (831) 330-0027
-      </a>
+    <div class="service-box">
+      <img src="images/Furn_assmbly.JPG" alt="Furniture Assembly">
+      <h3>Furniture Assembly</h3>
+      <p>Quick, reliable assembly for beds, desks, cabinets, and more.</p>
     </div>
-  </div>
-</header>
-
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container">
-      <h1>SwiftMove</h1>
-      <p>Trade Company</p>
-      <a class="hero-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdU_9Je91Gn2PZiMNwpkCdTuw-ClGOK0rgJOko4IQ9Fm6j69g/viewform">Book a Service</a>
+    <div class="service-box">
+      <img src="images/handyman.WEBP" alt="Handyman">
+      <h3>Handyman</h3>
+      <p>Small repairs, installations, and odd jobs done efficiently.</p>
     </div>
-  </section>
-
-  <!-- Reviews (moved up & infinite slider with placeholders) -->
-  <section id="reviews">
-    <div class="container">
-      <h2 class="section-title">What Customers Say</h2>
-
-      <div class="reviews-slider" aria-label="Customer reviews sliding carousel">
-        <div class="reviews-track">
-          <!-- Real reviews (existing) -->
-          <div class="review-slide">
-            <div class="stars">★★★★★</div>
-            <p>“Super great working with this team. Respectful, easy to communicate with, and made me feel comfortable.”</p>
-            <div class="reviewer">— Michelle M.</div>
-          </div>
-
-          <div class="review-slide">
-            <div class="stars">★★★★★</div>
-            <p>“My experience was great! Very communicative and professional. Good quality work done.”</p>
-            <div class="reviewer">— Walter M.</div>
-          </div>
-
-          <div class="review-slide">
-            <div class="stars">★★★★★</div>
-            <p>“Eddie was very responsive to help move furniture. They got it done superquick.”</p>
-            <div class="reviewer">— Jeska D.</div>
-          </div>
-
-          <!-- Placeholder review cards (replace text later) -->
-          <div class="review-slide">
-            <div class="stars">★★★★★</div>
-            <p>“[Placeholder] Add customer review here — short summary of the experience.”</p>
-            <div class="reviewer">— Customer Name</div>
-          </div>
-
-          <div class="review-slide">
-            <div class="stars">★★★★★</div>
-            <p>“[Placeholder] Add customer review here — short summary of the experience.”</p>
-            <div class="reviewer">— Customer Name</div>
-          </div>
-
-          <div class="review-slide">
-            <div class="stars">★★★★★</div>
-            <p>“[Placeholder] Add customer review here — short summary of the experience.”</p>
-            <div class="reviewer">— Customer Name</div>
-          </div>
-
-          <div class="review-slide">
-            <div class="stars">★★★★★</div>
-            <p>“[Placeholder] Add customer review here — short summary of the experience.”</p>
-            <div class="reviewer">— Customer Name</div>
-          </div>
-
-          <div class="review-slide">
-            <div class="stars">★★★★★</div>
-            <p>“[Placeholder] Add customer review here — short summary of the experience.”</p>
-            <div class="reviewer">— Customer Name</div>
-          </div>
-
-          <!-- DUPLICATE SET (for seamless infinite loop) -->
-          <div class="review-slide">
-            <div class="stars">★★★★★</div>
-            <p>“Super great working with this team. Respectful, easy to communicate with, and made me feel comfortable.”</p>
-            <div class="reviewer">— Michelle M.</div>
-          </div>
-
-          <div class="review-slide">
-            <div class="stars">★★★★★</div>
-            <p>“My experience was great! Very communicative and professional. Good quality work done.”</p>
-            <div class="reviewer">— Walter M.</div>
-          </div>
-
-          <div class="review-slide">
-            <div class="stars">★★★★★</div>
-            <p>“Eddie was very responsive to help move furniture. They got it done superquick.”</p>
-            <div class="reviewer">— Jeska D.</div>
-          </div>
-
-          <div class="review-slide">
-            <div class="stars">★★★★★</div>
-            <p>“[Placeholder] Add customer review here — short summary of the experience.”</p>
-            <div class="reviewer">— Customer Name</div>
-          </div>
-          <div class="review-slide">
-            <div class="stars">★★★★★</div>
-            <p>“[Placeholder] Add customer review here — short summary of the experience.”</p>
-            <div class="reviewer">— Customer Name</div>
-          </div>
-        </div>
-      </div>
-
-      <p class="mini" style="text-align:center; margin-top:12px;">Have we helped you recently? <a href="#contact" style="color:var(--deep-blue); background:var(--gold); padding:6px 10px; border-radius:8px; text-decoration:none;">Leave a review</a></p>
+    <div class="service-box">
+      <img src="images/pressure_washing.PNG" alt="Pressure Washing">
+      <h3>Pressure Washing</h3>
+      <p>Driveways, patios, and exteriors cleaned to perfection.</p>
     </div>
-  </section>
-
-  <!-- Services (moved down) -->
-  <section id="services">
-    <div class="container">
-      <h2 class="section-title">Our Services</h2>
-      <div class="grid cols-3">
-        <div class="card">
-          <img src="images/Appliance_installation.JPG" alt="Appliance Installation">
-          <h3>Appliance Installation</h3>
-          <p>Electric, Gas (Natural & Propane) — professional setup every time.</p>
-        </div>
-
-        <div class="card">
-          <img src="images/Furn_assmbly.JPG" alt="Furniture Assembly">
-          <h3>Furniture Assembly</h3>
-          <p>Quick, reliable assembly for beds, desks, cabinets, and more.</p>
-        </div>
-
-        <div class="card">
-          <img src="images/handyman.WEBP" alt="Handyman">
-          <h3>Handyman</h3>
-          <p>Small repairs, installations, and odd jobs done efficiently.</p>
-        </div>
-
-        <div class="card">
-          <img src="images/pressure_washing.PNG" alt="Pressure Washing">
-          <h3>Pressure Washing</h3>
-          <p>Driveways, patios, and exteriors cleaned to perfection.</p>
-        </div>
-
-        <div class="card">
-          <!-- easy placeholder to swap later - replace placeholder.jpg -->
-          <img src="images/placeholder.jpg" alt="Moving (placeholder)">
-          <h3>Moving</h3>
-          <p>Reliable moving service for homes, apartments, and offices — careful loading and safe transport.</p>
-        </div>
-
-        <div class="card">
-          <img src="images/placeholder.jpg" alt="Furniture Moving & Heavy Lifting (placeholder)">
-          <h3>Furniture Moving & Heavy Lifting</h3>
-          <p>We handle heavy furniture and bulky items safely — straps, dollies, and experienced crews.</p>
-        </div>
-      </div>
+    <div class="service-box">
+      <img src="images/placeholder.jpg" alt="Moving">
+      <h3>Moving</h3>
+      <p>Reliable moving service for homes, apartments, and offices — careful loading and safe transport.</p>
     </div>
-  </section>
-
-  <!-- Recent Jobs (unchanged) -->
-  <section id="recent-work">
-    <div class="container">
-      <h2 class="section-title">Recent Jobs</h2>
-      <div class="slider" aria-hidden="false">
-        <div class="slider-track">
-          <div class="slide"><img src="images/IMG_1608.jpeg" alt=""></div>
-          <div class="slide"><img src="images/IMG_1616.jpeg" alt=""></div>
-          <div class="slide"><img src="images/IMG_1296.jpeg" alt=""></div>
-          <div class="slide"><img src="images/IMG_1297.jpeg" alt=""></div>
-          <div class="slide"><img src="images/IMG_0933.jpeg" alt=""></div>
-          <div class="slide"><img src="images/IMG_1254.jpeg" alt=""></div>
-          <div class="slide"><img src="images/IMG_0911.jpeg" alt=""></div>
-          <div class="slide"><img src="images/IMG_1015.jpeg" alt=""></div>
-          <div class="slide"><img src="images/IMG_1016.jpeg" alt=""></div>
-          <div class="slide"><img src="images/IMG_1075.jpeg" alt=""></div>
-          <div class="slide"><img src="images/IMG_1086.jpeg" alt=""></div>
-
-          <!-- DUPLICATE SET FOR LOOP -->
-          <div class="slide"><img src="images/IMG_1608.jpeg" alt=""></div>
-          <div class="slide"><img src="images/IMG_1616.jpeg" alt=""></div>
-          <div class="slide"><img src="images/IMG_1296.jpeg" alt=""></div>
-          <div class="slide"><img src="images/IMG_1297.jpeg" alt=""></div>
-          <div class="slide"><img src="images/IMG_0933.jpeg" alt=""></div>
-          <div class="slide"><img src="images/IMG_1254.jpeg" alt=""></div>
-          <div class="slide"><img src="images/IMG_0911.jpeg" alt=""></div>
-          <div class="slide"><img src="images/IMG_1015.jpeg" alt=""></div>
-          <div class="slide"><img src="images/IMG_1016.jpeg" alt=""></div>
-          <div class="slide"><img src="images/IMG_1075.jpeg" alt=""></div>
-          <div class="slide"><img src="images/IMG_1086.jpeg" alt=""></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ (unchanged) -->
-  <section id="faq">
-    <div class="container">
-      <h2 class="section-title">FAQs</h2>
-      <div class="grid cols-2">
-        <details open>
-          <summary>Do you provide tools and materials?</summary>
-          <p>Yes — we arrive with the tools required for your booked service. If special parts or materials are needed, we’ll coordinate that before the job.</p>
-        </details>
-
-        <details open>
-          <summary>Which areas do you serve?</summary>
-          <p>Monterey County, Santa Cruz County, and nearby communities. Contact us to confirm service for your address.</p>
-        </details>
-
-        <details open>
-          <summary>How do quotes and pricing work?</summary>
-          <p>We provide upfront estimates based on the scope you share. For larger or variable jobs, we can do on-site quotes.</p>
-        </details>
-
-        <details open>
-          <summary>Are you available on weekends?</summary>
-          <p>Yes — we offer flexible scheduling, including evenings and weekends.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact: removed phone/email/social from this section & made map smaller -->
-  <section id="contact">
-    <div class="container">
-      <h2 class="section-title">Contact</h2>
-      <div class="contact-wrap">
-        <div class="contact-card">
-          <h3 style="margin-top:0;">Service Area</h3>
-          <p>Based in Santa Cruz County.</p>
-          <p class="mini">We cover Monterey County, Santa Cruz County, and nearby communities.</p>
-        </div>
-
-        <div class="contact-card" aria-hidden="false">
-          <!-- smaller map height so it doesn't dominate the page -->
-          <iframe class="map-iframe" src="https://www.google.com/maps/d/u/0/embed?mid=1zIL4BgO_I1zVINGadk7C6E9ZAVhjFlU&ehbc=2E312F&noprof=1" loading="lazy"></iframe>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About (kept) -->
-  <section id="about">
-    <div class="container">
-      <h2 class="section-title">About SwiftMove</h2>
-      <div class="grid cols-2">
-        <div class="card">
-          <p>SwiftMove is a locally owned, veteran-operated service company providing appliance installation, furniture assembly, handyman work, and pressure washing. We believe in clear communication, respectful service, and leaving every space better than we found it.</p>
-          <p class="mini" style="margin-top:10px;">Founded by Eribey, a USMC veteran, SwiftMove brings the discipline, reliability, and work ethic you expect — with friendly, professional care.</p>
-          <div class="badges">
-            <span class="badge">Veteran Operated</span>
-            <span class="badge">Locally Owned</span>
-            <span class="badge">Upfront Pricing</span>
-          </div>
-        </div>
-        <div class="card">
-          <h3 style="margin-top:0;">Why choose us?</h3>
-          <ul style="text-align:left; color:var(--muted); padding-left:18px;">
-            <li>Professional, on-time arrivals</li>
-            <li>Careful, clean workmanship</li>
-            <li>Easy booking and clear updates</li>
-            <li>Trusted by neighbors across King City to Redwood City</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer (restored quick links + contact) -->
-  <footer>
-    <div class="container foot">
-      <div>
-        <div style="display:flex;align-items:center;gap:10px;">
-          <div class="logo" aria-hidden="true" style="width:48px;height:48px;border-radius:12px;">SM</div>
-          <strong style="font-size:1.1rem;">SwiftMove</strong>
-        </div>
-        <p class="mini" style="margin-top:12px;">Fast, reliable home services: appliance installation, furniture assembly, handyman work, and pressure washing.</p>
-        <div class="badges">
-          <span class="badge">Veteran Operated</span>
-          <span class="badge">Local • Friendly</span>
-        </div>
-      </div>
-
-      <div>
-        <h4 style="margin:0 0 8px;">Quick Links</h4>
-        <p class="mini"><a href="#" data-open="privacy">Privacy Policy</a> • <a href="#" data-open="terms">Terms of Service</a></p>
-      </div>
-
-      <div>
-        <h4 style="margin:0 0 8px;">Contact</h4>
-        <p class="mini">Phone: <a href="tel:+18313300027">(831) 330-0027</a><br>Email: <a href="mailto:swiftmovexeme@gmail.com">swiftmovexeme@gmail.com</a></p>
-        <p class="mini">Mon–Sun • By appointment</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Privacy Modal -->
-  <div class="modal" id="privacy-modal" role="dialog" aria-modal="true" aria-labelledby="privacy-title" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); padding:20px; align-items:center; justify-content:center;">
-    <div style="background:var(--card); border-radius:12px; max-width:900px; width:100%; padding:20px;">
-      <h2 id="privacy-title">Privacy Policy</h2>
-      <p><em>Last updated: August 22, 2025</em></p>
-      <p>We respect your privacy. We collect contact details you submit and basic analytics to respond to inquiries and improve services.</p>
-      <div style="text-align:right; margin-top:10px;"><button class="btn" data-close>Close</button></div>
+    <div class="service-box">
+      <img src="images/placeholder.jpg" alt="Furniture Moving & Heavy Lifting">
+      <h3>Furniture Moving & Heavy Lifting</h3>
+      <p>We handle heavy furniture and bulky items safely — straps, dollies, and experienced crews.</p>
     </div>
   </div>
+</section>
 
-  <!-- Terms Modal -->
-  <div class="modal" id="terms-modal" role="dialog" aria-modal="true" aria-labelledby="terms-title" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); padding:20px; align-items:center; justify-content:center;">
-    <div style="background:var(--card); border-radius:12px; max-width:900px; width:100%; padding:20px;">
-      <h2 id="terms-title">Terms of Service</h2>
-      <p><em>Last updated: August 22, 2025</em></p>
-      <p>Terms summary: SwiftMove provides the services booked. Payment due on completion unless otherwise agreed. Contact us with questions.</p>
-      <div style="text-align:right; margin-top:10px;"><button class="btn" data-close>Close</button></div>
+<!-- REVIEWS SECTION -->
+<section id="reviews">
+  <h2>What Customers Say</h2>
+  <div class="reviews-slider">
+    <div class="reviews-track">
+      <div class="review-card">
+        <h4>★★★★★</h4>
+        <p>“Super great working with this team. Respectful, easy to communicate with, and made me feel comfortable.”</p>
+        <strong>— Michelle M.</strong>
+      </div>
+      <div class="review-card">
+        <h4>★★★★★</h4>
+        <p>“My experience was great! Very communicative and professional. Good quality work done.”</p>
+        <strong>— Walter M.</strong>
+      </div>
+      <div class="review-card">
+        <h4>★★★★★</h4>
+        <p>“Eddie was very responsive to help move furniture. They got it done superquick.”</p>
+        <strong>— Jeska D.</strong>
+      </div>
+      <div class="review-card">
+        <h4>★★★★★</h4>
+        <p>“[Placeholder] Add customer review here — short summary of the experience.”</p>
+        <strong>— Customer Name</strong>
+      </div>
+      <!-- Duplicate for seamless loop -->
+      <div class="review-card">
+        <h4>★★★★★</h4>
+        <p>“Super great working with this team. Respectful, easy to communicate with, and made me feel comfortable.”</p>
+        <strong>— Michelle M.</strong>
+      </div>
     </div>
   </div>
+</section>
 
-  <script>
-    // Modals (quick open/close)
-    const openLinks = document.querySelectorAll('[data-open]');
-    const closeButtons = document.querySelectorAll('[data-close]');
-    const modals = {
-      privacy: document.getElementById('privacy-modal'),
-      terms: document.getElementById('terms-modal')
-    };
-    openLinks.forEach(link => link.addEventListener('click', e => {
-      e.preventDefault();
-      const id = link.getAttribute('data-open');
-      if (modals[id]) modals[id].style.display = 'flex';
-    }));
-    closeButtons.forEach(btn => btn.addEventListener('click', () => {
-      Object.values(modals).forEach(m => m.style.display = 'none');
-    }));
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') Object.values(modals).forEach(m => m.style.display = 'none'); });
-    Object.values(modals).forEach(m => m && m.addEventListener('click', (e) => { if (e.target === m) m.style.display = 'none'; }));
-  </script>
+<!-- RECENT JOBS SECTION -->
+<section id="recent-jobs">
+  <h2>Recent Jobs</h2>
+  <div class="slider">
+    <div class="slider-track">
+      <img src="images/IMG_1608.jpeg" alt="">
+      <img src="images/IMG_1616.jpeg" alt="">
+      <img src="images/IMG_1296.jpeg" alt="">
+      <img src="images/IMG_1297.jpeg" alt="">
+      <img src="images/IMG_0933.jpeg" alt="">
+      <img src="images/IMG_1254.jpeg" alt="">
+      <img src="images/IMG_0911.jpeg" alt="">
+      <img src="images/IMG_1015.jpeg" alt="">
+      <img src="images/IMG_1016.jpeg" alt="">
+      <img src="images/IMG_1075.jpeg" alt="">
+      <img src="images/IMG_1086.jpeg" alt="">
+      <!-- Duplicate set for loop -->
+      <img src="images/IMG_1608.jpeg" alt="">
+      <img src="images/IMG_1616.jpeg" alt="">
+    </div>
+  </div>
+</section>
 
-  <!-- Schema (kept minimal) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "SwiftMove",
-    "telephone": "+1-831-330-0027",
-    "email": "swiftmovexeme@gmail.com",
-    "areaServed": ["Monterey County", "Santa Cruz County"],
-    "url": "https://Swiftter574.github.io/SwiftMove-Site/",
-    "description": "Appliance installation, furniture assembly, handyman, and pressure washing services."
-  }
-  </script>
-</body>
-</html>
+<!-- FAQ SECTION -->
+<section id="faq">
+  <h2>FAQs</h2>
+  <div>
+    <div class="faq-item">
+      <strong>Do you provide tools and materials?</strong>
+      <p>Yes — we arrive with the tools required for your booked service. If special parts or materials are needed, we’ll coordinate that before the job.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Which areas do you serve?</strong>
+      <p>Monterey County, Santa Cruz County, and nearby communities. Contact us to confirm service for your address.</p>
+    </div>
+    <div class="faq-item">
+      <strong>How do quotes and pricing work?</strong>
+      <p>We provide upfront estimates based on the scope you share. For larger or variable jobs, we can do on-site quotes.</p>
+    </div>
+    <div class="faq-item">
+      <strong>Are you available on weekends?</strong>
+      <p>Yes — we offer flexible scheduling, including evenings and weekends.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT MAP -->
+<section id="contact-map">
+  <h2>Contact</h2>
+  <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1zIL4BgO_I1zVINGadk7C6E9ZAVhjFlU&ehbc=2E312F" loading="lazy"></iframe>
+</section>
+
+  <!-- ABOUT SECTION -->
+<section id="about">
+  <h2>About SwiftMove</h2>
+  <div class="about-grid">
+    <div class="about-card">
+      <p>SwiftMove is a locally owned, veteran-operated service company providing appliance installation, furniture assembly, handyman work, and pressure washing. We believe in clear communication, respectful service, and leaving every space better than we found it.</p>
+      <p class="mini">Founded by Eribey, a USMC veteran, SwiftMove brings the discipline, reliability, and work ethic you expect — with friendly, professional care.</p>
+      <div class="badges">
+        <span class="badge">Veteran Operated</span>
+        <span class="badge">Locally Owned</span>
+        <span class="badge">Upfront Pricing</span>
+      </div>
+    </div>
+    <div class="about-card">
+      <h3>Why choose us?</h3>
+      <ul>
+        <li>Professional, on-time arrivals</li>
+        <li>Careful, clean workmanship</li>
+        <li>Easy booking and clear updates</li>
+        <li>Trusted by neighbors across King City to Redwood City</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div style="display:flex; align-items:center; gap:10px;">
+        <div class="logo" aria-hidden="true">SM</div>
+        <strong>SwiftMove</strong>
+      </div>
+      <p class="mini">Fast, reliable home services: appliance installation, furniture assembly, handyman work, and pressure washing.</p>
+      <div class="badges">
+        <span class="badge">Veteran Operated</span>
+        <span class="badge">Local • Friendly</span>
+      </div>
+    </div>
+    <div>
+      <h4>Quick Links</h4>
+      <p class="mini">
+        <a href="#" data-open="privacy">Privacy Policy</a> • 
+        <a href="#" data-open="terms">Terms of Service</a>
+      </p>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p class="mini">
+        Phone: <a href="tel:+18313300027">(831) 330-0027</a><br>
+        Email: <a href="mailto:swiftmovexeme@gmail.com">swiftmovexeme@gmail.com</a>
+      </p>
+      <p class="mini">Mon–Sun • By appointment</p>
+    </div>
+  </div>
+</footer>
+
+<!-- MODALS -->
+<div class="modal" id="privacy-modal">
+  <div class="modal-content">
+    <h2>Privacy Policy</h2>
+    <p><em>Last updated: August 22, 2025</em></p>
+    <p>We respect your privacy. We collect contact details you submit and basic analytics to respond to inquiries and improve services.</p>
+    <div style="text-align:right; margin-top:10px;">
+      <button class="btn" data-close>Close</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="terms-modal">
+  <div class="modal-content">
+    <h2>Terms of Service</h2>
+    <p><em>Last updated: August 22, 2025</em></p>
+    <p>Terms summary: SwiftMove provides the services booked. Payment due on completion unless otherwise agreed. Contact us with questions.</p>
+    <div style="text-align:right; margin-top:10px;">
+      <button class="btn" data-close>Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- SCRIPTS -->
+<script>
+  // Modal functionality
+  const openLinks = document.querySelectorAll('[data-open]');
+  const closeButtons = document.querySelectorAll('[data-close]');
+  const modals = {
+    privacy: document.getElementById('privacy-modal'),
+    terms: document.getElementById('terms-modal')
+  };
+
+  openLinks.forEach(link => link.addEventListener('click', e => {
+    e.preventDefault();
+    const id = link.getAttribute('data-open');
+    if (modals[id]) modals[id].style.display = 'flex';
+  }));
+
+  closeButtons.forEach(btn => btn.addEventListener('click', () => {
+    Object.values(modals).forEach(m => m.style.display = 'none');
+  }));
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') Object.values(modals).forEach(m => m.style.display = 'none');
+  });
+
+  Object.values(modals).forEach(m => m && m.addEventListener('click', e => {
+    if (e.target === m) m.style.display = 'none';
+  }));
+</script>
+
+<!-- SCHEMA (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "SwiftMove",
+  "telephone": "+1-831-330-0027",
+  "email": "swiftmovexeme@gmail.com",
+  "areaServed": ["Monterey County", "Santa Cruz County"],
+  "url": "https://Swiftter574.github.io/SwiftMove-Site/",
+  "description": "Appliance installation, furniture assembly, handyman, and pressure washing services."
+}
+</script>
