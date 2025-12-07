@@ -214,49 +214,41 @@
   </section>
 
   <!-- Services (moved down) -->
-  <section id="services">
-    <div class="container">
-      <h2 class="section-title">Our Services</h2>
-      <div class="grid cols-3">
-        <div class="card">
-          <img src="images/Appliance_installation.JPG" alt="Appliance Installation">
-          <h3>Appliance Installation</h3>
-          <p>Electric, Gas (Natural & Propane) — professional setup every time.</p>
-        </div>
-
-        <div class="card">
-          <img src="images/Furn_assmbly.JPG" alt="Furniture Assembly">
-          <h3>Furniture Assembly</h3>
-          <p>Quick, reliable assembly for beds, desks, cabinets, and more.</p>
-        </div>
-
-        <div class="card">
-          <img src="images/handyman.WEBP" alt="Handyman">
-          <h3>Handyman</h3>
-          <p>Small repairs, installations, and odd jobs done efficiently.</p>
-        </div>
-
-        <div class="card">
-          <img src="images/pressure_washing.PNG" alt="Pressure Washing">
-          <h3>Pressure Washing</h3>
-          <p>Driveways, patios, and exteriors cleaned to perfection.</p>
-        </div>
-
-        <div class="card">
-          <!-- easy placeholder to swap later - replace placeholder.jpg -->
-          <img src="images/placeholder.jpg" alt="Moving (placeholder)">
-          <h3>Moving</h3>
-          <p>Reliable moving service for homes, apartments, and offices — careful loading and safe transport.</p>
-        </div>
-
-        <div class="card">
-          <img src="images/placeholder.jpg" alt="Furniture Moving & Heavy Lifting (placeholder)">
-          <h3>Furniture Moving & Heavy Lifting</h3>
-          <p>We handle heavy furniture and bulky items safely — straps, dollies, and experienced crews.</p>
-        </div>
-      </div>
+ <section id="services">
+  <h2>Our Services</h2>
+  <div class="grid cols-3">
+    <div class="card">
+      <img src="images/Appliance_installation.JPG" alt="Appliance Installation">
+      <h3>Appliance Installation</h3>
+      <p>Electric, Gas (Natural & Propane) — professional setup every time.</p>
     </div>
-  </section>
+    <div class="card">
+      <img src="images/Furn_assmbly.JPG" alt="Furniture Assembly">
+      <h3>Furniture Assembly</h3>
+      <p>Quick, reliable assembly for beds, desks, cabinets, and more.</p>
+    </div>
+    <div class="card">
+      <img src="images/handyman.WEBP" alt="Handyman">
+      <h3>Handyman</h3>
+      <p>Small repairs, installations, and odd jobs done efficiently.</p>
+    </div>
+    <div class="card">
+      <img src="images/pressure_washing.PNG" alt="Pressure Washing">
+      <h3>Pressure Washing</h3>
+      <p>Driveways, patios, and exteriors cleaned to perfection.</p>
+    </div>
+    <div class="card">
+      <img src="images/placeholder.jpg" alt="Moving">
+      <h3>Moving</h3>
+      <p>Reliable moving service for homes, apartments, and offices.</p>
+    </div>
+    <div class="card">
+      <img src="images/placeholder.jpg" alt="Furniture Moving & Heavy Lifting">
+      <h3>Furniture Moving & Heavy Lifting</h3>
+      <p>We handle heavy furniture and items safely and efficiently.</p>
+    </div>
+  </div>
+</section>
 
   <!-- Recent Jobs (unchanged) -->
   <section id="recent-work">
@@ -396,27 +388,79 @@
   </footer>
 
   <!-- Privacy Modal -->
-  <div class="modal" id="privacy-modal" role="dialog" aria-modal="true" aria-labelledby="privacy-title" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); padding:20px; align-items:center; justify-content:center;">
-    <div style="background:var(--card); border-radius:12px; max-width:900px; width:100%; padding:20px;">
+  <div class="modal" id="privacy-modal" role="dialog" aria-modal="true" aria-labelledby="privacy-title">
+    <div class="modal-card">
       <h2 id="privacy-title">Privacy Policy</h2>
-      <p><em>Last updated: August 22, 2025</em></p>
-      <p>We respect your privacy. We collect contact details you submit and basic analytics to respond to inquiries and improve services.</p>
-      <div style="text-align:right; margin-top:10px;"><button class="btn" data-close>Close</button></div>
+      <p><em>Last updated: <!-- Set date --> August 22, 2025</em></p>
+      <p>SwiftMove ("we," "us," or "our") operates this website to provide information about our services and accept service inquiries. We respect your privacy.</p>
+      <h3>Information We Collect</h3>
+      <ul class="list">
+        <li>Contact details you submit (name, phone, email, address).</li>
+        <li>Service details (what you need done, preferred dates, photos you choose to send).</li>
+        <li>Basic analytics (page views) through your browser or any embedded tools you use (e.g., Google Forms or Calendly).</li>
+      </ul>
+      <h3>How We Use Information</h3>
+      <ul class="list">
+        <li>To respond to inquiries, schedule services, and provide quotes.</li>
+        <li>To improve our services and website content.</li>
+        <li>To send updates related to your requested service.</li>
+      </ul>
+      <h3>Sharing</h3>
+      <p>We do not sell your personal information. We may share limited details with service tools we use (e.g., Google Forms, Calendly) to process your booking, or as required by law.</p>
+      <h3>Data Retention</h3>
+      <p>We retain inquiry details for as long as necessary to provide services and keep business records. You may request deletion by contacting us.</p>
+      <h3>Your Choices</h3>
+      <p>You can request access, correction, or deletion of your information by emailing <a href="mailto:swiftmovexeme@gmail.com">swiftmovexeme@gmail.com</a>.</p>
+      <h3>Third-Party Links</h3>
+      <p>Our site may link to third-party services. Their privacy practices are their own; review their policies.</p>
+      <h3>Contact</h3>
+      <p>Questions? Email <a href="mailto:swiftmovexeme@gmail.com">swiftmovexeme@gmail.com</a>.</p>
+      <div class="modal-actions">
+        <button class="btn" data-close>Close</button>
+      </div>
     </div>
   </div>
 
   <!-- Terms Modal -->
-  <div class="modal" id="terms-modal" role="dialog" aria-modal="true" aria-labelledby="terms-title" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); padding:20px; align-items:center; justify-content:center;">
-    <div style="background:var(--card); border-radius:12px; max-width:900px; width:100%; padding:20px;">
+   <div class="modal" id="terms-modal" role="dialog" aria-modal="true" aria-labelledby="terms-title">
+    <div class="modal-card">
       <h2 id="terms-title">Terms of Service</h2>
-      <p><em>Last updated: August 22, 2025</em></p>
-      <p>Terms summary: SwiftMove provides the services booked. Payment due on completion unless otherwise agreed. Contact us with questions.</p>
-      <div style="text-align:right; margin-top:10px;"><button class="btn" data-close>Close</button></div>
+      <p><em>Last updated: <!-- Set date --> August 22, 2025</em></p>
+      <h3>1. Services</h3>
+      <p>SwiftMove provides appliance installation, furniture assembly, handyman work, pressure washing, and related services as booked by you (the "Customer").</p>
+      <h3>2. Estimates & Payment</h3>
+      <ul class="list">
+        <li>Estimates are based on the scope you provide and may be adjusted if the scope changes.</li>
+        <li>Payment is due upon completion unless otherwise agreed. We accept common payment methods (confirm at booking).</li>
+      </ul>
+      <h3>3. Customer Responsibilities</h3>
+      <ul class="list">
+        <li>Ensure safe access to the work area and disclose any hazards.</li>
+        <li>For gas and electrical work, Customer is responsible for providing compliant hookups and shutoff access unless we explicitly include materials/parts.</li>
+        <li>Secure pets and valuables prior to service.</li>
+      </ul>
+      <h3>4. Limits & Exclusions</h3>
+      <ul class="list">
+        <li>We are not responsible for pre‑existing damage or concealed conditions.</li>
+        <li>Pressure washing may not remove all stains and can expose underlying wear.</li>
+        <li>We do not perform code inspections or permitting unless agreed in writing.</li>
+      </ul>
+      <h3>5. Cancellations</h3>
+      <p>Please notify us as early as possible to reschedule. Short‑notice cancellations may incur a fee if we have already mobilized.</p>
+      <h3>6. Warranty</h3>
+      <p>We stand behind our workmanship. If there is an issue with our work within 14 days, contact us and we will make it right.</p>
+      <h3>7. Liability</h3>
+      <p>To the fullest extent permitted by law, SwiftMove’s liability is limited to the amount paid for the specific service giving rise to the claim.</p>
+      <h3>8. Contact</h3>
+      <p>For questions about these Terms, email <a href="mailto:swiftmovexeme@gmail.com">swiftmovexeme@gmail.com</a>.</p>
+      <div class="modal-actions">
+        <button class="btn" data-close>Close</button>
+      </div>
     </div>
   </div>
 
   <script>
-    // Modals (quick open/close)
+    // Open/Close Modals
     const openLinks = document.querySelectorAll('[data-open]');
     const closeButtons = document.querySelectorAll('[data-close]');
     const modals = {
@@ -426,13 +470,15 @@
     openLinks.forEach(link => link.addEventListener('click', e => {
       e.preventDefault();
       const id = link.getAttribute('data-open');
-      if (modals[id]) modals[id].style.display = 'flex';
+      modals[id]?.classList.add('open');
     }));
     closeButtons.forEach(btn => btn.addEventListener('click', () => {
-      Object.values(modals).forEach(m => m.style.display = 'none');
+      Object.values(modals).forEach(m => m.classList.remove('open'));
     }));
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') Object.values(modals).forEach(m => m.style.display = 'none'); });
-    Object.values(modals).forEach(m => m && m.addEventListener('click', (e) => { if (e.target === m) m.style.display = 'none'; }));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') Object.values(modals).forEach(m => m.classList.remove('open')); });
+
+    // Accessible backdrop close
+    Object.values(modals).forEach(m => m.addEventListener('click', (e) => { if (e.target === m) m.classList.remove('open'); }));
   </script>
 
   <!-- Schema (kept minimal) -->
