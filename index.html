@@ -93,7 +93,16 @@
      .contact-wrap { display:grid; gap:20px; grid-template-columns: 1fr; max-width:1100px; margin:0 auto; }
     @media(min-width:960px){ .contact-wrap { grid-template-columns: 1fr 1fr; } }
     .contact-card { background:var(--card); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); border:1px solid rgba(0,0,0,0.04); }
-    .map-iframe { width:100%; height:340px; border:0; border-radius:12px; }
+    .map-iframe {
+  width: 100%;
+  max-width: 500px;     /* controls the max size */
+  height: 300px;        /* medium size */
+  border: 0;
+  border-radius: 12px;
+  margin: 0 auto;       /* centers the map */
+  display: block;
+}
+
 
     /* Footer */
     footer { background: var(--deep-blue); color: var(--white); padding:36px 20px; }
