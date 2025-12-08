@@ -33,14 +33,59 @@
     .btn.primary:hover { opacity:0.95; }
 
     /* Hero */
-    .hero { background: var(--deep-blue); color: var(--white); text-align:center; padding:110px 20px; }
-    .hero h1 { font-size:72px; margin:0; line-height:0.95; }
-    .hero p { font-size:1.4rem; margin:12px 0 28px; color: rgba(255,255,255,0.92); }
-    .hero-btn { background: var(--gold); color: var(--deep-blue); padding:12px 30px; border-radius:8px; font-size:1.05rem; font-weight:700; text-decoration:none; display:inline-block; transition:0.18s; }
-    .hero-btn:hover { transform:translateY(-3px); opacity:0.95; }
+.hero {
+  background: var(--deep-blue);
+  color: var(--white);
+  text-align: center;
+  padding: 110px 20px;
+  font-family: "Times New Roman", Times, serif;
+}
 
-    section { padding:56px 0; }
-    h2.section-title { color: var(--deep-blue); font-size:2em; margin:0 0 28px; text-align:center; }
+/* Hero Title */
+.hero h1 {
+  font-size: 72px;
+  margin: 0;
+  line-height: 0.95;
+}
+
+/* Hero Subtitle */
+.hero p {
+  font-size: 1.4rem;
+  margin: 12px 0 28px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* Hero Button */
+.hero-btn {
+  background: var(--gold);
+  color: var(--deep-blue);
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.18s;
+}
+
+.hero-btn:hover {
+  transform: translateY(-3px);
+  opacity: 0.95;
+}
+
+/* General Section Spacing */
+section {
+  padding: 56px 0;
+}
+
+/* Section Titles */
+h2.section-title {
+  color: var(--deep-blue);
+  font-size: 2em;
+  margin: 0 0 28px;
+  text-align: center;
+}
+
 
     /* Cards grid */
     .grid { display:grid; gap:24px; justify-content:center; }
