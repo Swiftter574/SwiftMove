@@ -50,9 +50,20 @@
     .card { background: var(--card); border-radius: var(--radius); padding:18px; box-shadow: var(--shadow); text-align:center; border:1px solid rgba(0,0,0,0.04); }
     .card h3 { margin:12px 0 6px; color: var(--deep-blue); }
     .card p { color: var(--muted); margin:0; }
-
-    /* Services images */
-    #services img { height:150px; object-fit:cover; }
+    /* Fix services images alignment */
+#services .card img {
+  width: 100%;          /* makes image fill the card width */
+  height: 150px;        /* same height */
+  object-fit: cover;    /* crops nicely */
+  display: block;       /* removes inline-gap */
+  margin: 0 auto;       /* centers image */
+  border-radius: 8px;   /* optional, matches your style */
+} 
+    #services .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
     /* Reviews (infinite sliding) */
     .reviews-slider { overflow:hidden; width:100%; padding:10px 0 0; }
@@ -227,9 +238,6 @@
           </div>
         </div>
       </div>
-
-      <p class="mini" style="text-align:center; margin-top:12px;">Have we helped you recently? <a href="#contact" style="color:var(--deep-blue); background:var(--gold); padding:6px 10px; border-radius:8px; text-decoration:none;">Leave a review</a></p>
-    </div>
   </section>
 
   <!-- Services (moved down) -->
