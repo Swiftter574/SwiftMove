@@ -421,27 +421,96 @@
     </div>
   </footer>
 
-  <!-- Privacy Modal -->
-  <div class="modal" id="privacy-modal" role="dialog" aria-modal="true" aria-labelledby="privacy-title" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); padding:20px; align-items:center; justify-content:center;">
-    <div style="background:var(--card); border-radius:12px; max-width:900px; width:100%; padding:20px;">
-      <h2 id="privacy-title">Privacy Policy</h2>
-      <p><em>Last updated: August 22, 2025</em></p>
-      <p>We respect your privacy. We collect contact details you submit and basic analytics to respond to inquiries and improve services.</p>
-      <div style="text-align:right; margin-top:10px;"><button class="btn" data-close>Close</button></div>
+ <!-- Privacy Modal -->
+<div class="modal" id="privacy-modal" role="dialog" aria-modal="true" aria-labelledby="privacy-title" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); padding:20px; align-items:center; justify-content:center;">
+  <div class="modal-card" style="background:var(--card); border-radius:12px; max-width:900px; width:100%; padding:20px; max-height:90vh; overflow-y:auto;">
+    <h2 id="privacy-title">Privacy Policy</h2>
+    <p><em>Last updated: August 22, 2025</em></p>
+
+    <p>SwiftMove ("we," "us," or "our") operates this website to provide information about our services and accept service inquiries. We respect your privacy.</p>
+
+    <h3>Information We Collect</h3>
+    <ul class="list">
+      <li>Contact details you submit (name, phone, email, address)</li>
+      <li>Service details you provide (what you need, preferred dates, photos)</li>
+      <li>Basic analytics such as device type or pages visited</li>
+    </ul>
+
+    <h3>How We Use Information</h3>
+    <ul class="list">
+      <li>To respond to inquiries and provide estimates</li>
+      <li>To schedule services and communicate updates</li>
+      <li>To improve our website and services</li>
+    </ul>
+
+    <h3>Sharing</h3>
+    <p>We do not sell your personal information. We may share limited details with tools that help process bookings (e.g., Google Forms, Calendly) or as required by law.</p>
+
+    <h3>Data Retention</h3>
+    <p>We keep inquiry and service details as long as needed for business purposes. You may request deletion at any time.</p>
+
+    <h3>Your Choices</h3>
+    <p>You may request access, correction, or deletion of your information by emailing <a href="mailto:swiftmovexeme@gmail.com">swiftmovexeme@gmail.com</a>.</p>
+
+    <h3>Third-Party Links</h3>
+    <p>Our site may link to third-party scheduling or contact tools. Their privacy policies apply to their own services.</p>
+
+    <h3>Contact</h3>
+    <p>For privacy questions, email <a href="mailto:swiftmovexeme@gmail.com">swiftmovexeme@gmail.com</a>.</p>
+
+    <div class="modal-actions" style="text-align:right; margin-top:10px;">
+      <button class="btn" data-close>Close</button>
     </div>
   </div>
+</div>
 
-  <!-- Terms Modal -->
-  <div class="modal" id="terms-modal" role="dialog" aria-modal="true" aria-labelledby="terms-title" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); padding:20px; align-items:center; justify-content:center;">
-    <div style="background:var(--card); border-radius:12px; max-width:900px; width:100%; padding:20px;">
-      <h2 id="terms-title">Terms of Service</h2>
-      <p><em>Last updated: August 22, 2025</em></p>
-      <p>Terms summary: SwiftMove provides the services booked. Payment due on completion unless otherwise agreed. Contact us with questions.</p>
-      <div style="text-align:right; margin-top:10px;"><button class="btn" data-close>Close</button></div>
+<!-- Terms Modal -->
+<div class="modal" id="terms-modal" role="dialog" aria-modal="true" aria-labelledby="terms-title" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.5); padding:20px; align-items:center; justify-content:center;">
+  <div class="modal-card" style="background:var(--card); border-radius:12px; max-width:900px; width:100%; padding:20px; max-height:90vh; overflow-y:auto;">
+    <h2 id="terms-title">Terms of Service</h2>
+    <p><em>Last updated: August 22, 2025</em></p>
+
+    <h3>1. Services</h3>
+    <p>SwiftMove provides appliance installation, furniture assembly, handyman work, pressure washing, moving services, and related tasks as booked by you (the “Customer”).</p>
+
+    <h3>2. Estimates & Payment</h3>
+    <ul class="list">
+      <li>Estimates depend on the details you provide and may change if the scope changes.</li>
+      <li>Payment is due upon completion unless a different agreement is made.</li>
+    </ul>
+
+    <h3>3. Customer Responsibilities</h3>
+    <ul class="list">
+      <li>Provide safe access to the work area.</li>
+      <li>Disclose hazards or special conditions.</li>
+      <li>Ensure pets and valuables are secure.</li>
+      <li>Provide compliant hookups for gas, water, or electrical work unless materials are included.</li>
+    </ul>
+
+    <h3>4. Limits & Exclusions</h3>
+    <ul class="list">
+      <li>We are not responsible for pre-existing damage.</li>
+      <li>Pressure washing may expose wear or fail to remove deep stains.</li>
+      <li>We do not perform code inspections or permitting unless agreed in writing.</li>
+    </ul>
+
+    <h3>5. Cancellations</h3>
+    <p>Please notify us early to reschedule. Short-notice cancellations may incur a fee if we have already mobilized.</p>
+
+    <h3>6. Warranty</h3>
+    <p>If any issue arises with our workmanship within 14 days, contact us and we'll make it right.</p>
+
+    <h3>7. Liability</h3>
+    <p>To the extent permitted by law, SwiftMove's liability is limited to the amount paid for the service that caused the claim.</p>
+
+    <h3>8. Contact</h3>
+    <p>Email <a href="mailto:swiftmovexeme@gmail.com">swiftmovexeme@gmail.com</a> for questions about these Terms.</p>
+
+    <div class="modal-actions" style="text-align:right; margin-top:10px;">
+      <button class="btn" data-close>Close</button>
     </div>
   </div>
-
-  <script>
+</div>
     // Modals (quick open/close)
     const openLinks = document.querySelectorAll('[data-open]');
     const closeButtons = document.querySelectorAll('[data-close]');
