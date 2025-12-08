@@ -516,7 +516,7 @@ h2.section-title {
     <p><em>Last updated: August 22, 2025</em></p>
 
     <h3>1. Services</h3>
-    <p>SwiftMove provides appliance installation, furniture assembly, handyman work, pressure washing, moving services, and related tasks as booked by you (the “Customer”).</p>
+    <p>SwiftMove provides appliance installation, furniture assembly, handyman work, pressure washing, moving services, and related tasks.</p>
 
     <h3>2. Estimates & Payment</h3>
     <ul class="list">
@@ -529,27 +529,27 @@ h2.section-title {
       <li>Provide safe access to the work area.</li>
       <li>Disclose hazards or special conditions.</li>
       <li>Ensure pets and valuables are secure.</li>
-      <li>Provide compliant hookups for gas, water, or electrical work unless materials are included.</li>
+      <li>Provide compliant hookups for utilities unless materials are included.</li>
     </ul>
 
     <h3>4. Limits & Exclusions</h3>
     <ul class="list">
       <li>We are not responsible for pre-existing damage.</li>
       <li>Pressure washing may expose wear or fail to remove deep stains.</li>
-      <li>We do not perform code inspections or permitting unless agreed in writing.</li>
+      <li>We do not handle code inspections or permitting unless agreed in writing.</li>
     </ul>
 
     <h3>5. Cancellations</h3>
     <p>Please notify us early to reschedule. Short-notice cancellations may incur a fee if we have already mobilized.</p>
 
     <h3>6. Warranty</h3>
-    <p>If any issue arises with our workmanship within 14 days, contact us and we'll make it right.</p>
+    <p>If there's an issue with our work within 14 days, contact us and we’ll take care of it.</p>
 
     <h3>7. Liability</h3>
-    <p>To the extent permitted by law, SwiftMove's liability is limited to the amount paid for the service that caused the claim.</p>
+    <p>Liability is limited to the total amount paid for the related service.</p>
 
     <h3>8. Contact</h3>
-    <p>Email <a href="mailto:swiftmovexeme@gmail.com">swiftmovexeme@gmail.com</a> for questions about these Terms.</p>
+    <p>Email <a href="mailto:swiftmovexeme@gmail.com">swiftmovexeme@gmail.com</a> for questions.</p>
 
     <div class="modal-actions" style="text-align:right; margin-top:10px;">
       <button class="btn" data-close>Close</button>
@@ -557,25 +557,42 @@ h2.section-title {
   </div>
 </div>
 
-   </script>
-    // Modals (quick open/close)
-    const openLinks = document.querySelectorAll('[data-open]');
-    const closeButtons = document.querySelectorAll('[data-close]');
-    const modals = {
-      privacy: document.getElementById('privacy-modal'),
-      terms: document.getElementById('terms-modal')
-    };
-    openLinks.forEach(link => link.addEventListener('click', e => {
+<!-- FIXED SCRIPT TAG -->
+<script>
+  // Modal open/close system
+  const openLinks = document.querySelectorAll('[data-open]');
+  const closeButtons = document.querySelectorAll('[data-close]');
+
+  const modals = {
+    privacy: document.getElementById('privacy-modal'),
+    terms: document.getElementById('terms-modal')
+  };
+
+  openLinks.forEach(link =>
+    link.addEventListener('click', e => {
       e.preventDefault();
       const id = link.getAttribute('data-open');
       if (modals[id]) modals[id].style.display = 'flex';
-    }));
-    closeButtons.forEach(btn => btn.addEventListener('click', () => {
+    })
+  );
+
+  closeButtons.forEach(btn =>
+    btn.addEventListener('click', () => {
       Object.values(modals).forEach(m => m.style.display = 'none');
-    }));
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') Object.values(modals).forEach(m => m.style.display = 'none'); });
-    Object.values(modals).forEach(m => m && m.addEventListener('click', (e) => { if (e.target === m) m.style.display = 'none'; }));
-  </script>
+    })
+  );
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape')
+      Object.values(modals).forEach(m => m.style.display = 'none');
+  });
+
+  Object.values(modals).forEach(m =>
+    m.addEventListener('click', e => {
+      if (e.target === m) m.style.display = 'none';
+    })
+  );
+</script>
 
   <!-- Schema (kept minimal) -->
   <script type="application/ld+json">
