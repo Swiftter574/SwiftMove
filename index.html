@@ -90,16 +90,18 @@
     summary { cursor:pointer; font-weight:700; color: var(--deep-blue); }
 
     /* Contact/map */
-    .map-iframe {
-  width: 100%;
-  max-width: 500px;     /* controls the max size */
-  height: 300px;        /* medium size */
-  border: 0;
-  border-radius: 12px;
-  margin: 0 auto;       /* centers the map */
-  display: block;
+   .contact-map-wrapper {
+  display: flex;
+  justify-content: center;
 }
 
+.map-iframe {
+  width: 100%;
+  max-width: 420px;
+  height: 280px;
+  border: 0;
+  border-radius: 12px;
+}
 
     /* Footer */
     footer { background: var(--deep-blue); color: var(--white); padding:36px 20px; }
@@ -355,10 +357,14 @@
   </section>
 
   <!-- Contact: removed phone/email/social from this section & made map smaller -->
-  <section id="contact-map">
-  <h2>Contact</h2>
-  <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1zIL4BgO_I1zVINGadk7C6E9ZAVhjFlU&ehbc=2E312F" loading="lazy"></iframe>
-</section>
+  <div class="contact-map-wrapper">
+  <iframe
+    class="map-iframe"
+    src="https://www.google.com/maps/d/u/0/embed?mid=1zIL4BgO_I1zVINGadk7C6E9ZAVhjFlU&ehbc=2E312F"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
 
   <!-- About (kept) -->
   <section id="about">
