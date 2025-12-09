@@ -135,15 +135,15 @@ h2.section-title {
     summary { cursor:pointer; font-weight:700; color: var(--deep-blue); }
 
     /* Contact/map */
-   .contact-map-wrapper {
-  display: flex;
-  justify-content: center;
+  .contact-map-wrapper {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .map-iframe {
   width: 100%;
-  max-width: 600px;
-  height: 280px;
+  height: 400px;
   border: 0;
   border-radius: 12px;
 }
@@ -405,10 +405,13 @@ h2.section-title {
   <div class="contact-map-wrapper">
   <iframe
     class="map-iframe"
-    src="https://www.google.com/maps/d/embed?mid=15Krz8Hd_JRhGmHrK0InIDVmcUFEqsnw&ehbc=2E312F&noprof=1" width="640" height="480">"
+    src="https://www.google.com/maps/d/embed?mid=15Krz8Hd_JRhGmHrK0InIDVmcUFEqsnw&ehbc=2E312F&noprof=1"
+    width="640"
+    height="480"
     allowfullscreen=""
     loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"></iframe>
+    referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
 </div>
 
   <!-- About (kept) -->
