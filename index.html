@@ -156,6 +156,84 @@ h2.section-title {
     footer a { color: var(--gold); text-decoration:none; }
     .badges { display:flex; gap:8px; margin-top:12px; flex-wrap:wrap; }
     .badge { background:var(--white); color:var(--deep-blue); padding:6px 10px; border-radius:999px; font-weight:700; font-size:13px; border:0; }
+
+    /* ===========================
+   📱 MOBILE FRIENDLY FIXES
+   ===========================*/
+@media (max-width: 600px) {
+
+  /* HERO SECTION */
+  .hero {
+    padding: 70px 20px;
+  }
+  .hero h1 {
+    font-size: 42px;
+    line-height: 1.1;
+  }
+  .hero p {
+    font-size: 1.1rem;
+  }
+  .hero-btn {
+    padding: 10px 24px;
+    font-size: 1rem;
+  }
+
+  /* GRID SERVICE CARDS */
+  .grid.cols-3,
+  .grid.cols-4 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .card img {
+    height: 130px !important;
+  }
+
+  /* MAP */
+  .map-iframe {
+    height: 260px !important;
+  }
+  .contact-map-wrapper {
+    padding: 0 10px;
+  }
+
+  /* RECENT JOBS SLIDER */
+  .slider {
+    width: 100%;
+    overflow: hidden;
+  }
+  .slider-track {
+    gap: 14px;
+  }
+
+  /* REVIEWS SLIDER */
+  #reviews .review-card {
+    width: 90% !important;
+    margin: 0 auto;
+  }
+
+  /* CONTACT & FOOTER */
+  footer .container {
+    padding: 20px 12px;
+  }
+
+  footer .cols {
+    display: block;
+    text-align: center;
+  }
+  footer .cols div {
+    margin-bottom: 20px;
+  }
+
+  footer a {
+    font-size: 0.95rem;
+  }
+
+  /* TEXT SIZES */
+  h2.section-title {
+    font-size: 1.6rem;
+  }
+
+}
   </style>
 </head>
 <body>
